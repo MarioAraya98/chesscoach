@@ -1,0 +1,44 @@
+[Event "1. La Opera - por que el desarrollo gana partidas"]
+[Site "Paris"]
+[Date "1858.??.??"]
+[White "Paul Morphy"]
+[Black "Duque de Brunswick y Conde Isouard"]
+[Result "1-0"]
+[Annotator "Comentarios originales, enfocados en las fugas de Mario"]
+
+{ Paris, 1858. Morphy jugo esta partida en un palco de la Opera, entre acto y acto. Es la mejor demostracion que existe de una sola idea: EL DESARROLLO ES TIEMPO, Y EL TIEMPO ES MATERIAL. Mira cuantas piezas tiene cada bando en juego cuando cae el mate. }
+1. e4 e5 2. Nf3 { Ataca e5 y desarrolla. Toda jugada de apertura deberia hacer dos cosas a la vez. Tu sistema con blancas (e4-Nf3-Bc4-c3-d4-O-O) sigue este principio: por eso funciona cuando no te sales de el. }
+2... d6 { La Defensa Philidor. Solida pero pasiva: encierra al alfil de f8. }
+3. d4 Bg4 { Aqui empieza el problema de las negras. Clavan el caballo, pero sacan el alfil ANTES de resolver la tension en el centro. Regla practica: no salgas a atacar mientras tu rey siga sin enrocar. }
+4. dxe5 Bxf3 { Forzado. Si 4...dxe5 5.Qxd8+ Kxd8 y las negras pierden el enroque para siempre. Ya pagaron por haber jugado Bg4 antes de tiempo. }
+5. Qxf3 dxe5 6. Bc4 { Amenaza tranquila: el alfil apunta a f7 junto con la dama. No hay jaque ni captura, pero la posicion ya esta decidida. Estas son las jugadas que no ves cuando mueves en 8 segundos. }
+6... Nf6 { Ataca la dama blanca y de paso defiende. Veamos que pasa. }
+7. Qb3 { Ahora si hay doble ataque real: b7 y f7. La dama trabaja en dos frentes porque las negras nunca desarrollaron el flanco de dama. }
+7... Qe7 { Unica. Defiende f7, pero fijate en el precio: la dama tapa a su propio alfil de f8, que ya estaba encerrado. Dos piezas desarrolladas y ninguna coordinada. }
+8. Nc3 { Morphy ni siquiera cobra el peon con Qxb7: prefiere meter otra pieza al ataque. ESTA es la leccion central. Con ventaja de desarrollo, sumar atacantes vale mas que sumar peones. Compara con tus partidas: cuando vas ganando te vas a comer peones a a2 y c1, y el caballo queda atrapado. }
+8... c6 9. Bg5 { Cuarta pieza al ataque. Clava el caballo de f6, el unico defensor decente. }
+9... b5 { Desesperacion: las negras intentan ganar tiempo atacando el alfil. }
+10. Nxb5 { El sacrificio. No es intuicion, es calculo: cambia una pieza por la apertura total de las lineas hacia el rey negro, que sigue en el centro. }
+10... cxb5 11. Bxb5+ Nbd7 { Ahora si desarrollan el caballo, pero clavado y como carne de canon. Llegar tarde al desarrollo es peor que no llegar. }
+12. O-O-O { La jugada que mas me gusta. En pleno ataque, Morphy pone su rey a salvo Y activa la torre en la columna d, justo donde esta clavado el caballo. Seguridad y ataque en un solo movimiento. }
+12... Rd8 13. Rxd7 { Segundo sacrificio: elimina al defensor. }
+13... Rxd7 14. Rd1 { Todas las piezas blancas participan: dama, dos alfiles y torre contra un rey sin enroque. Las negras tienen mas material y estan perdidas. }
+14... Qe6 15. Bxd7+ Nxd7 16. Qb8+ { Ultimo sacrificio: la dama se entrega para desviar al caballo de d7. }
+16... Nxb8 17. Rd8# { Mate. Morphy entrego dama y torre, y gano porque TODAS sus piezas jugaban. Las negras tenian mas material, dormido. } 1-0
+
+[Event "2. La rutina de las 3 preguntas"]
+[Site "Estudio"]
+[Date "????.??.??"]
+[White "Sistema con blancas"]
+[Black "Italiana"]
+[Result "*"]
+[Annotator "Rutina anti-blunder"]
+
+{ Este capitulo no es una partida famosa: es la rutina que quiero que hagas mentalmente en CADA jugada. Recorremos una Italiana normal y en cada momento te muestro que deberias estar mirando. }
+1. e4 e5 2. Nf3 Nc6 3. Bc4 Bc5 { Posicion de partida de tu repertorio con blancas. Antes de seguir, las tres preguntas. 1) Jaques del rival: ninguno. 2) Capturas del rival: Bxf2+ existe, pero pierde pieza tras Kxf2. 3) Que amenaza su ultima jugada: el alfil de c5 mira f2. Anotado, no urgente. }
+4. c3 { Prepara d4 y le da retirada al alfil por b3 si viene Na5. Esta es tu jugada de sistema. En tus partidas la reemplazaste por Nc3 dos veces y perdiste las dos: Nc3 bloquea el peon c y te deja sin el centro. }
+4... Nf6 5. d4 exd4 6. cxd4 Bb4+ { Ahora si: el jaque cambia todo, la pregunta 1 se responde sola. Solo hay tres formas de responder a un jaque: mover el rey, capturar la pieza, o interponer. }
+7. Bd2 { Interponer con desarrollo. Nunca respondas un jaque con la primera jugada legal que veas: elegi la que ademas te desarrolle. }
+7... Bxd2+ 8. Nbxd2 { Recapturar con la pieza menos util. El caballo de b1 no tenia mejor casilla. }
+8... d5 9. exd5 Nxd5 10. O-O { Rey seguro, torre conectada, centro sano. Salir de la apertura asi te da 20 jugadas comodas. Es exactamente lo que NO pasa cuando te sales del repertorio en la jugada 4. }
+10... O-O 11. Re1 { Torre a la columna abierta. Ultima idea: cuando no sepas que jugar y no haya nada tactico, mejora tu peor pieza. } *

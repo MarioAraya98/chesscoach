@@ -25,6 +25,7 @@ def _find_root() -> Path:
 ROOT = _find_root()
 CONFIG_PATH = ROOT / "config.yaml"
 REPERTOIRE_PATH = ROOT / "repertoire.pgn"
+STUDIES_DIR = ROOT / "studies"
 DATA_DIR = ROOT / "data"
 DB_PATH = DATA_DIR / "games.db"
 PUZZLES_PATH = DATA_DIR / "mis-blunders.pgn"
