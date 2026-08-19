@@ -1,0 +1,31 @@
+# Cuentas a seguir
+accounts:
+  lichess: mariocr98
+  chesscom: MarioCR1998
+
+# Solo se analizan estos controles de tiempo (los blitz/bullet distorsionan las metricas)
+time_classes: [rapid, classical]
+
+# Metas del plan de entrenamiento (PLAN v2, 2026-08-19)
+targets:
+  blunders_per_game: 0.5      # piezas colgadas / errores graves por partida
+  time_left_seconds: 180      # tiempo sobrante al terminar (< 3:00)
+  seconds_per_move: 20        # promedio minimo
+  opening_disasters: 0        # partidas donde sale del repertorio y pierde ventaja
+  conversion_rate: 0.90       # % de ventajas ganadoras convertidas
+
+# Umbrales de analisis
+analysis:
+  # Los errores se clasifican por la caida en PROBABILIDAD DE VICTORIA (metodo Lichess),
+  # no en centipeones brutos: asi una oscilacion en posicion ya perdida no cuenta como error.
+  # Umbrales algo mas estrictos que los de Lichess para captar errores de apertura de ~18 wp.
+  inaccuracy_wp: 8            # puntos porcentuales de win% perdidos
+  mistake_wp: 15
+  blunder_wp: 25
+  # Ventaja a partir de la cual se considera "posicion ganada" para medir conversion
+  winning_cp: 300
+  # Profundidad / tiempo por jugada del motor
+  engine_depth: 14
+  engine_movetime_ms: 250
+  # Jugadas de apertura a comparar contra el repertorio
+  repertoire_depth: 12

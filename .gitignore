@@ -1,0 +1,11 @@
+.venv/
+__pycache__/
+*.pyc
+uv.lock
+
+# El motor pesa >100 MB y se descarga solo en la PC.
+data/engine/
+data/*.log
+
+# data/games.db y data/mis-blunders.pgn SI se publican:
+# son lo unico que necesita el panel en la nube.

@@ -1,0 +1,59 @@
+[Event "1. Two Knights - LA QUE ME COSTO LA PARTIDA"]
+[Site "repertorio"]
+[White "?"]
+[Black "mario"]
+[Result "*"]
+
+1. e4 e5 2. Bc4 Nf6 3. Nf3 Nc6 4. Ng5 d5 5. exd5 Na5 6. Bb5+ c6 7. dxc6 bxc6
+8. Be2 h6 9. Nf3 e4 10. Ne5 Bd6 *
+
+[Event "2. Escocesa"]
+[Site "repertorio"]
+[White "?"]
+[Black "mario"]
+[Result "*"]
+
+1. e4 e5 2. Nf3 Nc6 3. d4 exd4 4. Nxd4 Bc5 5. Be3 Qf6 6. c3 Nge7 7. Bc4 O-O *
+
+[Event "3. Espanola"]
+[Site "repertorio"]
+[White "?"]
+[Black "mario"]
+[Result "*"]
+
+1. e4 e5 2. Nf3 Nc6 3. Bb5 a6 4. Ba4 Nf6 5. O-O Be7 6. Re1 b5 7. Bb3 d6 8. c3 O-O *
+
+[Event "4. Italiana"]
+[Site "repertorio"]
+[White "?"]
+[Black "mario"]
+[Result "*"]
+
+1. e4 e5 2. Nf3 Nc6 3. Bc4 Bc5 4. c3 Nf6 5. d4 exd4 6. cxd4 Bb4+ 7. Bd2 Bxd2+
+8. Nbxd2 d5 *
+
+[Event "5. Gambito de Rey"]
+[Site "repertorio"]
+[White "?"]
+[Black "mario"]
+[Result "*"]
+
+1. e4 e5 2. f4 exf4 3. Nf3 d5 4. exd5 Nf6 5. Bc4 Nxd5 6. O-O Be7 *
+
+[Event "6. BLANCAS - Sistema fijo"]
+[Site "repertorio"]
+[White "mario"]
+[Black "?"]
+[Result "*"]
+
+1. e4 e5 2. Nf3 Nc6 3. Bc4 Bc5 4. c3 Nf6 5. d4 exd4 6. cxd4 Bb4+ 7. Bd2 Bxd2+
+8. Nbxd2 d5 9. exd5 Nxd5 10. O-O *
+
+[Event "6b. BLANCAS - Two Knights (Fried Liver a mi favor)"]
+[Site "repertorio"]
+[White "mario"]
+[Black "?"]
+[Result "*"]
+
+1. e4 e5 2. Nf3 Nc6 3. Bc4 Nf6 4. Ng5 d5 5. exd5 Na5 6. Bb5+ c6 7. dxc6 bxc6
+8. Be2 h6 9. Nf3 e4 10. Ne5 *
