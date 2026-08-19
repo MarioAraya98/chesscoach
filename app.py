@@ -169,7 +169,7 @@ for column, (title, (field, target)) in zip(columns, charts.items(), strict=True
         .mark_rule(strokeDash=[6, 4], color="green")
         .encode(y="y:Q")
     )
-    column.altair_chart((line + goal).properties(title=title, height=240), use_container_width=True)
+    column.altair_chart((line + goal).properties(title=title, height=240), width="stretch")
 
 if not ratings.empty:
     st.altair_chart(
@@ -181,7 +181,7 @@ if not ratings.empty:
             color="source:N",
         )
         .properties(title="Evolución del rating", height=260),
-        use_container_width=True,
+        width="stretch",
     )
 
 st.divider()
@@ -199,7 +199,7 @@ else:
             "best_san": "Mejor", "severity": "Tipo", "cp_loss": "Pérdida (cp)",
             "seconds": "Segundos", "url": "Partida",
         }),
-        use_container_width=True,
+        width="stretch",
         hide_index=True,
         column_config={"Partida": st.column_config.LinkColumn(display_text="abrir")},
     )

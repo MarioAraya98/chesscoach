@@ -115,6 +115,20 @@ def _is_trapped_piece_blunder(board_before: chess.Board, move: chess.Move) -> bo
     return escapes == 0
 
 
+def _final_score(board: chess.Board, color: chess.Color) -> int | None:
+    """Puntaje de una posicion terminada. None si la partida sigue.
+
+    Hay que resolverlo sin motor: analizar una posicion terminada devuelve
+    basura y hacia que dar mate se contara como error garrafal.
+    """
+    outcome = board.outcome(claim_draw=True)
+    if outcome is None:
+        return None
+    if outcome.winner is None:
+        return 0
+    return MATE_CP if outcome.winner == color else -MATE_CP
+
+
 def deviation_for(row: dict[str, Any], rep_depth: int) -> Any:
     """Desviacion de repertorio de una partida. No necesita motor."""
     game = chess.pgn.read_game(io.StringIO(row["pgn"]))
@@ -176,9 +190,9 @@ def analyze_game(
                 eval_before = _score_cp(engine.analyse(board, limit), my_color)
             after_board = board.copy()
             after_board.push(move)
+            final = _final_score(after_board, my_color)
             eval_after = (
-                -MATE_CP
-                if after_board.is_checkmate() and after_board.turn == my_color
+                final if final is not None
                 else _score_cp(engine.analyse(after_board, limit), my_color)
             )
         else:

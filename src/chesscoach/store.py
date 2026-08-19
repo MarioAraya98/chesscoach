@@ -119,6 +119,11 @@ def analyzed_games(conn: sqlite3.Connection) -> list[sqlite3.Row]:
     ).fetchall()
 
 
+def game_pgn(conn: sqlite3.Connection, game_id: str) -> str | None:
+    row = conn.execute("SELECT pgn FROM games WHERE id = ?", (game_id,)).fetchone()
+    return row[0] if row else None
+
+
 def update_repertoire(conn: sqlite3.Connection, game_id: str, dev: Any | None) -> None:
     """Reescribe solo las columnas de repertorio: no requiere volver a correr el motor."""
     hit = dev if dev is not None and dev.by_me else None
