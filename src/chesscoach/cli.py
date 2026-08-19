@@ -101,14 +101,19 @@ def cmd_report(_: argparse.Namespace) -> int:
 
     leaks = metrics.repertoire_leaks(frame)
     if not leaks.empty:
-        print("\nFUGAS DE REPERTORIO (que estudiar primero)")
+        print("\nFUGAS DE REPERTORIO (las 5 peores)")
         print("-" * 70)
-        for leak in leaks.itertuples():
+        for leak in leaks.head(5).itertuples():
             print(
                 f"  {leak.rep_chapter}: en la jugada {leak.jugada} jugaste"
                 f" {leak.rep_played}, deberia ser {leak.rep_expected}"
                 f"  ({leak.veces}x, {leak.derrotas} derrotas)"
             )
+
+    print("\nQUE ENTRENAR HOY")
+    print("-" * 70)
+    for index, task in enumerate(metrics.today_plan(frame, config), start=1):
+        print(f"  {index}. {task}")
     return 0
 
 

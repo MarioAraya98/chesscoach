@@ -158,10 +158,12 @@ def analyze_game(
 
         # --- reloj ---
         clock = _clock_seconds(comment)
+        spent_now: float | None = None
         if my_turn and clock is not None:
             if prev_clock is not None:
                 spent = prev_clock + increment - clock
                 if 0 <= spent < 600:
+                    spent_now = spent
                     move_times.append(spent)
             prev_clock = clock
             last_clock = clock
@@ -213,7 +215,7 @@ def analyze_game(
                         cp_loss=min(cp_loss, MATE_CP),
                         wp_loss=round(wp_loss, 1),
                         fen_before=board.fen(),
-                        seconds=move_times[-1] if move_times else None,
+                        seconds=spent_now,
                         trapped_piece=_is_trapped_piece_blunder(board, move),
                     )
                 )

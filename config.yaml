@@ -13,6 +13,7 @@ targets:
   seconds_per_move: 20        # promedio minimo
   opening_disasters: 0        # partidas donde sale del repertorio y pierde ventaja
   conversion_rate: 0.90       # % de ventajas ganadoras convertidas
+  rushed_error_rate: 0.20     # % de errores graves cometidos jugando apurado
 
 # Umbrales de analisis
 analysis:
@@ -29,3 +30,5 @@ analysis:
   engine_movetime_ms: 250
   # Jugadas de apertura a comparar contra el repertorio
   repertoire_depth: 12
+  # Por debajo de estos segundos se considera que la jugada fue apurada
+  rushed_seconds: 15

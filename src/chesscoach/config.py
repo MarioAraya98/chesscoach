@@ -25,6 +25,7 @@ class Analysis:
     engine_depth: int
     engine_movetime_ms: int
     repertoire_depth: int
+    rushed_seconds: int
 
 
 @dataclass(frozen=True)

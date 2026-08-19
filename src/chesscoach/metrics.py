@@ -74,11 +74,25 @@ def issues_frame(frame: pd.DataFrame) -> pd.DataFrame:
     return pd.DataFrame(records)
 
 
+def rushed_error_rate(frame: pd.DataFrame, rushed_seconds: int) -> float | None:
+    """Proporcion de errores graves cometidos en jugadas apuradas.
+
+    Es la metrica que conecta la causa (jugar rapido) con el efecto (colgar piezas).
+    """
+    issues = issues_frame(frame)
+    if issues.empty or "seconds" not in issues:
+        return None
+    serious = issues[issues["severity"].isin(["blunder", "mistake"])].dropna(subset=["seconds"])
+    if serious.empty:
+        return None
+    return float((serious["seconds"] < rushed_seconds).mean())
+
+
 def compute(frame: pd.DataFrame, config: Config) -> list[Metric]:
     t = config.targets
     if frame.empty:
-        empty = [None] * 5
-        blunders, time_left, spm, disasters, conversion = empty
+        empty = [None] * 6
+        blunders, time_left, spm, disasters, conversion, rushed = empty
     else:
         analyzed = frame.dropna(subset=["my_moves"])
         blunders = (
@@ -91,6 +105,7 @@ def compute(frame: pd.DataFrame, config: Config) -> list[Metric]:
         disasters = frame["rep_exit_ply"].notna().sum() / len(frame)
         winning = frame[frame["reached_winning"] == 1]
         conversion = winning["converted"].mean() if not winning.empty else None
+        rushed = rushed_error_rate(frame, config.analysis.rushed_seconds)
 
     def clean(value: Any) -> float | None:
         return None if value is None or pd.isna(value) else float(value)
@@ -102,6 +117,8 @@ def compute(frame: pd.DataFrame, config: Config) -> list[Metric]:
                t["time_left_seconds"], True, "s"),
         Metric("spm", "Segundos por jugada", clean(spm),
                t["seconds_per_move"], False, "s"),
+        Metric("rushed", "Errores por jugar apurado", clean(rushed),
+               t["rushed_error_rate"], True, "%"),
         Metric("disasters", "Partidas fuera del repertorio", clean(disasters),
                t["opening_disasters"], True, "%"),
         Metric("conversion", "Ventajas ganadoras convertidas", clean(conversion),
@@ -134,3 +151,51 @@ def repertoire_leaks(frame: pd.DataFrame) -> pd.DataFrame:
         .sort_values(["veces", "derrotas"], ascending=False)
     )
     return grouped
+
+
+def today_plan(frame: pd.DataFrame, config: Config) -> list[str]:
+    """Traduce las metricas fuera de meta en tareas concretas, la peor primero."""
+    if frame.empty:
+        return ["Sin datos: corre `chesscoach all` despues de jugar."]
+
+    by_key = {m.key: m for m in compute(frame, config)}
+    tasks: list[tuple[int, str]] = []
+
+    rushed = by_key["rushed"]
+    if rushed.value is not None and not rushed.on_target:
+        tasks.append((
+            0,
+            f"{rushed.value * 100:.0f}% de tus errores graves salieron en menos de "
+            f"{config.analysis.rushed_seconds}s. Antes de mover, cuenta hasta 15 y "
+            f"revisa jaques y capturas del rival.",
+        ))
+
+    spm = by_key["spm"]
+    if spm.value is not None and not spm.on_target:
+        tasks.append((
+            1,
+            f"Promedias {spm.value:.0f}s por jugada (meta {spm.target:.0f}s). "
+            f"Juega hoy en 15+10 y termina con menos de 3:00 en el reloj.",
+        ))
+
+    leaks = repertoire_leaks(frame)
+    if not leaks.empty:
+        worst = leaks.iloc[0]
+        tasks.append((
+            2,
+            f"Repasa {worst.rep_chapter}: en la jugada {worst.jugada} juegas "
+            f"{worst.rep_played} y deberia ser {worst.rep_expected} "
+            f"({worst.veces} veces, {worst.derrotas} derrotas).",
+        ))
+
+    conversion = by_key["conversion"]
+    if conversion.value is not None and not conversion.on_target:
+        tasks.append((
+            3,
+            f"Convertiste {conversion.value * 100:.0f}% de las posiciones ganadas. "
+            f"Con ventaja material: cambia piezas, no peones del enroque.",
+        ))
+
+    if not tasks:
+        return ["Todas las metricas en meta. Sube el control de tiempo o el nivel de rival."]
+    return [text for _, text in sorted(tasks)]

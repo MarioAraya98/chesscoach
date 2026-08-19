@@ -81,6 +81,7 @@ wins = int((view["result"] == "win").sum())
 losses = int((view["result"] == "loss").sum())
 draws = int((view["result"] == "draw").sum())
 ratings = view.dropna(subset=["my_rating"])
+computed = metrics.compute(view, config)
 
 head = st.columns(4)
 head[0].metric("Partidas", len(view))
@@ -91,16 +92,24 @@ for source, group in ratings.groupby("source"):
     latest = int(group["my_rating"].iloc[-1])
     delta = latest - int(group["my_rating"].iloc[0])
     head[2].markdown(f"{source} · **{latest}** `{delta:+d}`")
-head[3].metric("Precisión del plan", f"{sum(m.on_target for m in metrics.compute(view, config))}/5")
+head[3].metric(
+    "Precisión del plan", f"{sum(m.on_target for m in computed)}/{len(computed)}"
+)
+
+st.divider()
+
+# --- que entrenar hoy ---
+st.subheader("🎯 Qué entrenar hoy")
+for index, task in enumerate(metrics.today_plan(view, config), start=1):
+    st.info(f"**{index}.** {task}")
 
 st.divider()
 
 # --- tarjeta de metricas ---
 st.subheader("Tarjeta de progreso")
-computed = metrics.compute(view, config)
-cards = st.columns(len(computed))
-for column, metric in zip(cards, computed, strict=True):
-    column.markdown(
+cards = st.columns(3)
+for position, metric in enumerate(computed):
+    cards[position % 3].markdown(
         f"**{STATUS_ICON[metric.status]} {metric.label}**\n\n"
         f"# {format_value(metric)}\n"
         f"meta: {format_target(metric)}"
@@ -117,7 +126,7 @@ with left:
     if leaks.empty:
         st.success("Sin desviaciones. El repertorio se está aplicando.")
     else:
-        for leak in leaks.itertuples():
+        for leak in leaks.head(5).itertuples():
             st.error(
                 f"**{leak.rep_chapter}** — jugada {leak.jugada}: jugaste "
                 f"`{leak.rep_played}`, debe ser `{leak.rep_expected}` "
