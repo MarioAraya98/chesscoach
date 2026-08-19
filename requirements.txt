@@ -6,3 +6,7 @@ streamlit>=1.38
 pandas>=2.2
 altair>=5.4
 pyyaml>=6.0
+
+# El propio paquete: sin esto, `from chesscoach import ...` falla en la nube
+# porque el codigo vive en src/ y no estaria en el sys.path.
+.

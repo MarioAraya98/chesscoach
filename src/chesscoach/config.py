@@ -8,7 +8,21 @@ from pathlib import Path
 
 import yaml
 
-ROOT = Path(__file__).resolve().parents[2]
+def _find_root() -> Path:
+    """Raiz del proyecto.
+
+    En local el paquete se instala en modo editable y `__file__` cae dentro del
+    repo; en Streamlit Cloud se instala en site-packages, asi que ahi la
+    referencia valida es el directorio de trabajo.
+    """
+    candidates = (Path.cwd(), Path(__file__).resolve().parents[2])
+    for candidate in candidates:
+        if (candidate / "config.yaml").exists():
+            return candidate
+    return Path.cwd()
+
+
+ROOT = _find_root()
 CONFIG_PATH = ROOT / "config.yaml"
 REPERTOIRE_PATH = ROOT / "repertoire.pgn"
 DATA_DIR = ROOT / "data"
