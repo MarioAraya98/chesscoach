@@ -19,18 +19,37 @@ _DIMENSION = re.compile(r'\s(?:width|height)="[^"]*"')
 
 COMPACTO = """
 <style>
-  .block-container {padding-top: 2rem; padding-bottom: 1rem; max-width: 46rem;}
+  .block-container {padding-top: 3.2rem; padding-bottom: 1rem; max-width: 46rem;}
   div[data-testid="stVerticalBlock"] {gap: .4rem;}
-  div[data-testid="stHorizontalBlock"] {gap: .25rem;}
+
+  /* Streamlit apila las columnas en pantallas angostas: en el telefono eso
+     convertiria la barra de 4 flechas en 4 filas. Se fuerza una sola fila. */
+  div[data-testid="stHorizontalBlock"] {
+    flex-wrap: nowrap !important;
+    gap: .25rem !important;
+  }
+  div[data-testid="stHorizontalBlock"] > div,
+  div[data-testid="stColumn"] {
+    min-width: 0 !important;
+    flex: 1 1 0% !important;
+    width: auto !important;
+  }
+
   /* Controles delgados, al estilo de la barra de Lichess */
   div[data-testid="stButton"] button {
-    padding: .15rem .4rem; min-height: 2rem; line-height: 1.1;
+    padding: .15rem .2rem; min-height: 2rem; line-height: 1.1; width: 100%;
   }
   div[data-testid="stButton"] button p {font-size: .85rem; margin: 0;}
   h1 {font-size: 1.4rem; margin-bottom: .1rem; padding-top: 0;}
   div[data-testid="stAlert"] {padding: .55rem .7rem;}
   div[data-testid="stAlert"] p {font-size: .9rem; margin: 0;}
   div[data-testid="stExpander"] summary p {font-size: .85rem;}
+
+  /* En el telefono cada pixel de ancho cuenta para el tablero */
+  @media (max-width: 640px) {
+    .block-container {padding-left: .5rem; padding-right: .5rem; padding-top: 2.8rem;}
+    div[data-testid="stButton"] button p {font-size: .8rem;}
+  }
 </style>
 """
 
@@ -41,11 +60,11 @@ def compactar() -> None:
 
 
 def _escalable(svg: str) -> str:
-    """Deja que el SVG se ajuste al contenedor conservando su proporcion."""
+    """Deja que el SVG llene su contenedor."""
 
     def arreglar(etiqueta: re.Match[str]) -> str:
         limpia = _DIMENSION.sub("", etiqueta.group(0))
-        return limpia[:-1] + ' style="width:100%;height:auto;display:block">'
+        return limpia[:-1] + ' style="width:100%;height:100%;display:block">'
 
     return _SVG_ABRE.sub(arreglar, svg, count=1)
 
@@ -66,9 +85,11 @@ def tablero(
         squares=chess.SquareSet(resaltar) if resaltar else None,
         arrows=flechas,
     )
+    # El contenedor lleva aspect-ratio para que su altura se sepa antes de medir
+    # el SVG; sin eso Streamlit fija un alto menor y recorta la ultima fila.
     st.markdown(
-        "<div style='display:flex;justify-content:center'>"
-        f"<div style='width:min(94vw,{maximo}px)'>{_escalable(svg)}</div>"
+        "<div style='display:flex;justify-content:center;margin-bottom:.4rem'>"
+        f"<div style='width:min(94vw,{maximo}px);aspect-ratio:1/1'>{_escalable(svg)}</div>"
         "</div>",
         unsafe_allow_html=True,
     )
