@@ -18,7 +18,7 @@ import chess  # noqa: E402
 import chess.svg  # noqa: E402
 import streamlit as st  # noqa: E402
 
-from chesscoach import metrics, store, training, ui  # noqa: E402
+from chesscoach import explain, metrics, store, training, ui  # noqa: E402
 from chesscoach.config import load_config  # noqa: E402
 from chesscoach.tablero import tablero_tactil  # noqa: E402
 
@@ -211,6 +211,25 @@ else:
     if fila.trapped_piece:
         detalle += " 🐴 La pieza quedó atrapada."
     st.info(detalle)
+
+    # --- la parte de entrenador: por que una jugada es mejor que la otra ---
+    jugada_tuya = tablero.san(chess.Move.from_uci(estado.jugada_hecha)) if estado.get(
+        "jugada_hecha") else ""
+    leccion = explain.explicar(
+        fila.fen_before, fila.best_san, jugada_tuya,
+        pv_mejor=getattr(fila, "pv_mejor", None),
+        pv_refutacion=getattr(fila, "pv_refuta", None),
+    )
+    if leccion.por_que_mejor:
+        st.markdown(f"🎓 {leccion.por_que_mejor}")
+    if leccion.que_paso:
+        st.markdown(f"⚠️ {leccion.que_paso}")
+    if leccion.linea_mejor or leccion.refutacion:
+        with st.expander("Ver las líneas"):
+            if leccion.linea_mejor:
+                st.markdown(f"**Con {fila.best_san}:** `{leccion.linea_mejor}`")
+            if leccion.refutacion and jugada_tuya != fila.best_san:
+                st.markdown(f"**Con {jugada_tuya}:** `{leccion.refutacion}`")
 
     st.markdown(f"[Ver la partida completa]({fila.url})")
     if st.button("Siguiente posición ▶", type="primary", width="stretch"):

@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import argparse
+import json
 import sys
 
 from . import analyze as analysis_mod
@@ -95,6 +96,57 @@ def cmd_study(args: argparse.Namespace) -> int:
     return 0
 
 
+def cmd_explain(args: argparse.Namespace) -> int:
+    """Calcula con el motor las lineas que justifican cada jugada.
+
+    Se guardan en la base porque la nube no tiene Stockfish: el entrenador solo
+    lee lo que esta PC dejo calculado.
+    """
+    import chess
+
+    config = load_config()
+    engine_path = engine_mod.find_engine() or engine_mod.ensure_engine()
+    engine = analysis_mod.open_engine(engine_path)
+    hechas = 0
+    try:
+        with store.connect() as conn:
+            filas = conn.execute(
+                "SELECT game_id, details FROM analysis"
+            ).fetchall()
+            for indice, fila in enumerate(filas, start=1):
+                datos = json.loads(fila["details"])
+                issues = datos.get("issues", [])
+                cambiado = False
+                for issue in issues:
+                    if issue.get("pv_mejor") is not None and not args.force:
+                        continue
+                    board = chess.Board(issue["fen_before"])
+                    issue["pv_mejor"] = analysis_mod.variante(board, engine, config.analysis)
+                    tras = board.copy()
+                    try:
+                        tras.push_san(issue["san"])
+                        issue["pv_refuta"] = analysis_mod.variante(
+                            tras, engine, config.analysis
+                        )
+                    except ValueError:
+                        issue["pv_refuta"] = []
+                    cambiado = True
+                    hechas += 1
+                if cambiado:
+                    conn.execute(
+                        "UPDATE analysis SET details = ? WHERE game_id = ?",
+                        (json.dumps(datos, ensure_ascii=False), fila["game_id"]),
+                    )
+                    conn.commit()
+                if indice % 10 == 0:
+                    print(f"  {indice}/{len(filas)} partidas · {hechas} explicaciones",
+                          flush=True)
+    finally:
+        engine.quit()
+    print(f"Listo: {hechas} posiciones con linea calculada")
+    return 0
+
+
 def cmd_report(_: argparse.Namespace) -> int:
     config = load_config()
     with store.connect() as conn:
@@ -170,6 +222,12 @@ def main(argv: list[str] | None = None) -> int:
     study.add_argument("url", help="URL o id del estudio (ej. lichess.org/study/abcd1234)")
     study.add_argument("--name", help="nombre del archivo en studies/")
     study.set_defaults(func=cmd_study)
+
+    explain = subparsers.add_parser(
+        "explain", help="calcular las lineas que explican cada error"
+    )
+    explain.add_argument("--force", action="store_true", help="recalcular las ya hechas")
+    explain.set_defaults(func=cmd_explain)
 
     subparsers.add_parser("report", help="tarjeta de progreso en consola").set_defaults(
         func=cmd_report

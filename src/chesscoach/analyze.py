@@ -284,6 +284,29 @@ def report_to_row(report: GameReport) -> dict[str, Any]:
     }
 
 
+def variante(
+    board: chess.Board,
+    engine: chess.engine.SimpleEngine,
+    settings: Analysis,
+    jugadas: int = 4,
+) -> list[str]:
+    """Linea principal del motor desde esta posicion, en notacion SAN."""
+    if board.is_game_over():
+        return []
+    limit = chess.engine.Limit(
+        depth=settings.engine_depth, time=settings.engine_movetime_ms / 1000
+    )
+    info = engine.analyse(board, limit)
+    salida: list[str] = []
+    tablero = board.copy()
+    for move in info.get("pv", [])[:jugadas]:
+        if move not in tablero.legal_moves:
+            break
+        salida.append(tablero.san(move))
+        tablero.push(move)
+    return salida
+
+
 def open_engine(path: Path) -> chess.engine.SimpleEngine:
     engine = chess.engine.SimpleEngine.popen_uci(str(path))
     engine.configure({"Threads": 2, "Hash": 256})
