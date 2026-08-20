@@ -1,98 +1,14 @@
-[Event "ERROR GRAVE - jugada 12"]
-[Site "https://www.chess.com/game/live/171252808798"]
-[Date "????.??.??"]
-[Round "?"]
-[White "Juegan"]
-[Black "?"]
-[Result "*"]
-[FEN "r1b1k2r/ppp1np1p/1b4q1/6B1/2BP4/4QN2/PPP2PPP/R3K2R w KQkq - 0 12"]
-[SetUp "1"]
-
-{ Jugaste Qxe7# y perdiste 100.0 puntos. La mejor era Qxe7#. Encuentra la jugada correcta. } *
-
-[Event "ERROR GRAVE - jugada 30"]
-[Site "https://www.chess.com/game/live/171360780428"]
-[Date "????.??.??"]
-[Round "?"]
-[White "Juegan"]
-[Black "?"]
-[Result "*"]
-[FEN "5r2/6k1/5p2/p2p4/1b1q4/3B3Q/1r3PPP/3R1RK1 w - - 0 30"]
-[SetUp "1"]
-
-{ Jugaste Qh7# y perdiste 100.0 puntos. La mejor era Qh7#. Encuentra la jugada correcta. } *
-
-[Event "ERROR GRAVE - jugada 14"]
-[Site "https://www.chess.com/game/live/171582381824"]
-[Date "????.??.??"]
-[Round "?"]
-[White "Juegan"]
-[Black "?"]
-[Result "*"]
-[FEN "r2qk2r/ppp2pb1/1nnp2pp/1N6/2B1PQ2/5P1P/PPP2P2/2KR3R w kq - 3 14"]
-[SetUp "1"]
-
-{ Jugaste Qxf7# y perdiste 100.0 puntos. La mejor era Qxf7#. Encuentra la jugada correcta. } *
-
-[Event "ERROR GRAVE - jugada 30"]
-[Site "https://www.chess.com/game/live/173194616130"]
+[Event "ERROR GRAVE - jugada 20"]
+[Site "https://lichess.org/slYAezYf"]
 [Date "????.??.??"]
 [Round "?"]
 [White "?"]
 [Black "?"]
 [Result "*"]
-[FEN "1r5k/p1P3pp/b2p4/7P/8/4p3/P7/1N2K2R b - - 0 30"]
+[FEN "2kr2r1/ppp5/1bN4p/1N1p4/1P6/P1P3Pq/5P1P/R2QR1K1 b - - 0 20"]
 [SetUp "1"]
 
-{ Jugaste Rxb1# y perdiste 100.0 puntos. La mejor era Rxb1#. Encuentra la jugada correcta. } *
-
-[Event "ERROR GRAVE - jugada 21"]
-[Site "https://lichess.org/1JdHcUhl"]
-[Date "????.??.??"]
-[Round "?"]
-[White "Juegan"]
-[Black "?"]
-[Result "*"]
-[FEN "r1bq4/3nkr1R/p1p1p1Q1/2ppP1N1/3P4/2N5/PPP2P2/R3K3 w Q - 3 21"]
-[SetUp "1"]
-
-{ Jugaste Qxf7# y perdiste 100.0 puntos. La mejor era Qxf7#. Encuentra la jugada correcta. } *
-
-[Event "ERROR GRAVE - jugada 18"]
-[Site "https://lichess.org/SOYOhsCv"]
-[Date "????.??.??"]
-[Round "?"]
-[White "?"]
-[Black "?"]
-[Result "*"]
-[FEN "q3k1r1/7p/3Q1p2/4pb2/1n6/4p3/PPP2PPP/R4RK1 b - - 0 18"]
-[SetUp "1"]
-
-{ Jugaste Qxg2# y perdiste 100.0 puntos. La mejor era Qxg2#. Encuentra la jugada correcta. } *
-
-[Event "ERROR GRAVE - jugada 21"]
-[Site "https://lichess.org/dHxMLLER"]
-[Date "????.??.??"]
-[Round "?"]
-[White "?"]
-[Black "?"]
-[Result "*"]
-[FEN "6k1/2p2ppp/4b3/8/2PQP3/PrNK1Pb1/6PP/RB2q1NR b - - 6 21"]
-[SetUp "1"]
-
-{ Jugaste Bf4 y perdiste 100.0 puntos. La mejor era Qd1+. Encuentra la jugada correcta. } *
-
-[Event "ERROR GRAVE - jugada 33"]
-[Site "https://lichess.org/PBF1jtzC"]
-[Date "????.??.??"]
-[Round "?"]
-[White "Juegan"]
-[Black "?"]
-[Result "*"]
-[FEN "r7/pp3p2/8/5R2/3N2k1/2P1P1B1/r1P3PP/5RK1 w - - 0 33"]
-[SetUp "1"]
-
-{ Jugaste R1f4# y perdiste 100.0 puntos. La mejor era R1f4#. Encuentra la jugada correcta. } *
+{ Jugaste bxc6 y perdiste 100.0 puntos. La mejor era Rxg3+. Encuentra la jugada correcta. } *
 
 [Event "ERROR GRAVE - jugada 13"]
 [Site "https://lichess.org/rdUtCYcS"]
@@ -106,41 +22,29 @@
 
 { Jugaste Qf6+ y perdiste 100.0 puntos. La mejor era Qxf7#. Encuentra la jugada correcta. } *
 
-[Event "ERROR GRAVE - jugada 38"]
-[Site "https://lichess.org/UjKaxO1Q"]
+[Event "ERROR GRAVE - jugada 21"]
+[Site "https://lichess.org/dHxMLLER"]
 [Date "????.??.??"]
 [Round "?"]
 [White "?"]
 [Black "?"]
 [Result "*"]
-[FEN "6k1/pp5p/6p1/1Pp3Pb/P1P1P3/R7/3r1q2/7K b - - 4 38"]
+[FEN "6k1/2p2ppp/4b3/8/2PQP3/PrNK1Pb1/6PP/RB2q1NR b - - 6 21"]
 [SetUp "1"]
 
-{ Jugaste Qh2# y perdiste 100.0 puntos. La mejor era Qg2#. Encuentra la jugada correcta. } *
+{ Jugaste Bf4 y perdiste 100.0 puntos. La mejor era Qd1+. Encuentra la jugada correcta. } *
 
-[Event "ERROR GRAVE - jugada 28"]
-[Site "https://lichess.org/pp7hbeJg"]
+[Event "ERROR GRAVE - jugada 27"]
+[Site "https://www.chess.com/game/live/170285132412"]
 [Date "????.??.??"]
 [Round "?"]
-[White "Juegan"]
+[White "?"]
 [Black "?"]
 [Result "*"]
-[FEN "3rkr2/p7/2p2Q2/2p1p3/2NbP3/3P4/P4PPP/1R4K1 w - - 1 28"]
+[FEN "6k1/1p3p1p/np3Bp1/2pP4/2P5/PP2Q3/2q1r1PP/4RRK1 b - - 0 27"]
 [SetUp "1"]
 
-{ Jugaste Qe6# y perdiste 100.0 puntos. La mejor era Qe6#. Encuentra la jugada correcta. } *
-
-[Event "ERROR GRAVE - jugada 55"]
-[Site "https://lichess.org/STy178dt"]
-[Date "????.??.??"]
-[Round "?"]
-[White "Juegan"]
-[Black "?"]
-[Result "*"]
-[FEN "8/8/7P/8/pQ4P1/3k2K1/1Q6/8 w - - 1 55"]
-[SetUp "1"]
-
-{ Jugaste Q4d4# y perdiste 100.0 puntos. La mejor era Q4d4#. Encuentra la jugada correcta. } *
+{ Jugaste Rxe3 y perdiste 100.0 puntos. La mejor era Rxg2+. Encuentra la jugada correcta. } *
 
 [Event "ERROR GRAVE - jugada 34"]
 [Site "https://lichess.org/lz04DtBm"]
@@ -154,77 +58,17 @@
 
 { Jugaste Qxf3 y perdiste 100.0 puntos. La mejor era Qe6+. Encuentra la jugada correcta. } *
 
-[Event "ERROR GRAVE - jugada 25"]
-[Site "https://lichess.org/3p1DcpTF"]
+[Event "ERROR GRAVE - jugada 24"]
+[Site "https://lichess.org/slYAezYf"]
 [Date "????.??.??"]
 [Round "?"]
 [White "?"]
 [Black "?"]
 [Result "*"]
-[FEN "4k3/p4p1p/2b2p2/4p3/8/5q2/r4P1P/1Q3K2 b - - 1 25"]
+[FEN "2k3r1/p1p2r2/1b5p/Pp1p4/1P6/2P3Pq/2Q2P1P/R4RK1 b - - 0 24"]
 [SetUp "1"]
 
-{ Jugaste Qxf2# y perdiste 100.0 puntos. La mejor era Qxf2#. Encuentra la jugada correcta. } *
-
-[Event "ERROR GRAVE - jugada 21"]
-[Site "https://lichess.org/rcgGxlk6"]
-[Date "????.??.??"]
-[Round "?"]
-[White "?"]
-[Black "?"]
-[Result "*"]
-[FEN "r5k1/pp3ppp/2p2n2/8/B3p1n1/1P6/P1P3PP/4qR1K b - - 1 21"]
-[SetUp "1"]
-
-{ Jugaste Qxf1# y perdiste 100.0 puntos. La mejor era Qxf1#. Encuentra la jugada correcta. } *
-
-[Event "ERROR GRAVE - jugada 23"]
-[Site "https://www.chess.com/game/live/181063100841"]
-[Date "????.??.??"]
-[Round "?"]
-[White "?"]
-[Black "?"]
-[Result "*"]
-[FEN "2k5/pp6/2pq3p/3b4/3Q4/3P4/PPP2PrP/4RR1K b - - 1 23"]
-[SetUp "1"]
-
-{ Jugaste Qxh2# y perdiste 100.0 puntos. La mejor era Qxh2#. Encuentra la jugada correcta. } *
-
-[Event "ERROR GRAVE - jugada 42"]
-[Site "https://lichess.org/gxSUh6ay"]
-[Date "????.??.??"]
-[Round "?"]
-[White "?"]
-[Black "?"]
-[Result "*"]
-[FEN "6k1/6pp/KRqn4/7r/P7/8/8/8 b - - 10 42"]
-[SetUp "1"]
-
-{ Jugaste Qa8# y perdiste 100.0 puntos. La mejor era Qxa4#. Encuentra la jugada correcta. } *
-
-[Event "ERROR GRAVE - jugada 27"]
-[Site "https://lichess.org/txVGKVT7"]
-[Date "????.??.??"]
-[Round "?"]
-[White "Juegan"]
-[Black "?"]
-[Result "*"]
-[FEN "4r1k1/3bB1pp/8/pp1pQN2/8/3n4/q5PP/2R3K1 w - - 1 27"]
-[SetUp "1"]
-
-{ Jugaste Qxg7# y perdiste 100.0 puntos. La mejor era Qxg7#. Encuentra la jugada correcta. } *
-
-[Event "ERROR GRAVE - jugada 30"]
-[Site "https://lichess.org/2kUWuZri"]
-[Date "????.??.??"]
-[Round "?"]
-[White "?"]
-[Black "?"]
-[Result "*"]
-[FEN "7k/5pp1/3p3p/Pp1P4/1P4P1/8/1PB2q1P/4rQ1K b - - 1 30"]
-[SetUp "1"]
-
-{ Jugaste Qxf1# y perdiste 100.0 puntos. La mejor era Rxf1#. Encuentra la jugada correcta. } *
+{ Jugaste Be3 y perdiste 100.0 puntos. La mejor era Rxg3+. Encuentra la jugada correcta. } *
 
 [Event "ERROR GRAVE - jugada 19"]
 [Site "https://lichess.org/B8pnRz7A"]
@@ -248,7 +92,7 @@
 [FEN "r1k5/p1p1Q2p/1p1p2p1/3P4/6P1/7P/3n3K/4R3 w - - 1 34"]
 [SetUp "1"]
 
-{ Jugaste Qxh7 y perdiste 96.7 puntos. La mejor era Qe8+. Encuentra la jugada correcta. } *
+{ Jugaste Qxh7 y perdiste 96.9 puntos. La mejor era Qe8+. Encuentra la jugada correcta. } *
 
 [Event "Error - jugada 16"]
 [Site "https://lichess.org/B8pnRz7A"]
@@ -274,6 +118,42 @@
 
 { Jugaste Rfe8 y perdiste 96.0 puntos. La mejor era Nxe4. Encuentra la jugada correcta. } *
 
+[Event "ERROR GRAVE - jugada 51"]
+[Site "https://lichess.org/DV1LYcTr"]
+[Date "????.??.??"]
+[Round "?"]
+[White "Juegan"]
+[Black "?"]
+[Result "*"]
+[FEN "8/4PQpk/2p4p/3q4/8/8/3K3P/8 w - - 3 51"]
+[SetUp "1"]
+
+{ Jugaste Kc3 y perdiste 16.0 puntos. La mejor era Qxd5. Encuentra la jugada correcta. } *
+
+[Event "ERROR GRAVE - jugada 20"]
+[Site "https://www.chess.com/game/live/170145378860"]
+[Date "????.??.??"]
+[Round "?"]
+[White "?"]
+[Black "?"]
+[Result "*"]
+[FEN "2k2rr1/ppp1P3/2np3p/1N2p3/4Q3/3P3q/PPP3P1/R5K1 b - - 0 20"]
+[SetUp "1"]
+
+{ Jugaste Kd7 y perdiste 11.8 puntos. La mejor era Nxe7. Encuentra la jugada correcta. } *
+
+[Event "ERROR GRAVE - jugada 43"]
+[Site "https://lichess.org/slYAezYf"]
+[Date "????.??.??"]
+[Round "?"]
+[White "?"]
+[Black "?"]
+[Result "*"]
+[FEN "5r2/2p1q3/1k6/1p1P4/3Q4/6P1/7P/6K1 b - - 9 43"]
+[SetUp "1"]
+
+{ Jugaste Ka5 y perdiste 11.2 puntos. La mejor era Qc5. Encuentra la jugada correcta. } *
+
 [Event "ERROR GRAVE - jugada 20"]
 [Site "https://lichess.org/dHxMLLER"]
 [Date "????.??.??"]
@@ -285,6 +165,18 @@
 [SetUp "1"]
 
 { Jugaste Rb3+ y perdiste 9.9 puntos. La mejor era Qd1+. Encuentra la jugada correcta. } *
+
+[Event "ERROR GRAVE - jugada 13"]
+[Site "https://lichess.org/RKcUNvXD"]
+[Date "????.??.??"]
+[Round "?"]
+[White "Juegan"]
+[Black "?"]
+[Result "*"]
+[FEN "r3kb1r/pp3pp1/2pp1q1p/1Q6/4PBn1/2N5/PPP2PPP/3R1RK1 w kq - 0 13"]
+[SetUp "1"]
+
+{ Jugaste Nd5 y perdiste 8.7 puntos. La mejor era Qxb7. Encuentra la jugada correcta. } *
 
 [Event "ERROR GRAVE - jugada 12"]
 [Site "https://www.chess.com/game/live/173193608640"]
@@ -310,6 +202,42 @@
 
 { Jugaste Kh1 y perdiste 8.6 puntos. La mejor era Qxg2. Encuentra la jugada correcta. } *
 
+[Event "ERROR GRAVE - jugada 16"]
+[Site "https://lichess.org/s8JbH6T8"]
+[Date "????.??.??"]
+[Round "?"]
+[White "?"]
+[Black "?"]
+[Result "*"]
+[FEN "r5k1/ppp2ppp/6q1/8/3P4/2P3Pb/PP3P1P/R1B1Q1K1 b - - 0 16"]
+[SetUp "1"]
+
+{ Jugaste f6 y perdiste 8.2 puntos. La mejor era Qc6. Encuentra la jugada correcta. } *
+
+[Event "ERROR GRAVE - jugada 16"]
+[Site "https://lichess.org/RKcUNvXD"]
+[Date "????.??.??"]
+[Round "?"]
+[White "Juegan"]
+[Black "?"]
+[Result "*"]
+[FEN "2rk1b1r/pQN2pp1/2pp2qp/8/4PBn1/8/PPP2PPP/3R1RK1 w - - 1 16"]
+[SetUp "1"]
+
+{ Jugaste Rxd6+ y perdiste 7.6 puntos. La mejor era Ne8. Encuentra la jugada correcta. } *
+
+[Event "ERROR GRAVE - jugada 25"]
+[Site "https://lichess.org/6oN2u28x"]
+[Date "????.??.??"]
+[Round "?"]
+[White "?"]
+[Black "?"]
+[Result "*"]
+[FEN "5rk1/pbp1rppp/3p4/4p3/2P1Q3/1P2B2P/PR3PP1/5RK1 b - - 0 25"]
+[SetUp "1"]
+
+{ Jugaste Re6 y perdiste 7.6 puntos. La mejor era Bxe4. Encuentra la jugada correcta. } *
+
 [Event "ERROR GRAVE - jugada 11"]
 [Site "https://lichess.org/SOYOhsCv"]
 [Date "????.??.??"]
@@ -320,19 +248,31 @@
 [FEN "r2qkb1r/pp4pp/2P2n2/1B2pb2/1n2p3/2N5/PPP2PPP/R1BQ1RK1 b - - 0 11"]
 [SetUp "1"]
 
-{ Jugaste a6 y perdiste 7.7 puntos. La mejor era bxc6. Encuentra la jugada correcta. } *
+{ Jugaste a6 y perdiste 7.5 puntos. La mejor era bxc6. Encuentra la jugada correcta. } *
 
-[Event "ERROR GRAVE - jugada 28"]
-[Site "https://www.chess.com/game/live/173194616130"]
+[Event "ERROR GRAVE - jugada 29"]
+[Site "https://lichess.org/slYAezYf"]
 [Date "????.??.??"]
 [Round "?"]
 [White "?"]
 [Black "?"]
 [Result "*"]
-[FEN "r6k/p1P3pp/b2p4/7P/1r6/2N1p3/P7/R3K2R b - - 0 28"]
+[FEN "2k3r1/p1p5/4q3/Pp1p4/1P2P2p/2P3P1/6QP/4R1K1 b - - 0 29"]
 [SetUp "1"]
 
-{ Jugaste Rab8 y perdiste 7.3 puntos. La mejor era h6. Encuentra la jugada correcta. } *
+{ Jugaste Qb6+ y perdiste 7.4 puntos. La mejor era hxg3. Encuentra la jugada correcta. } *
+
+[Event "ERROR GRAVE - jugada 12"]
+[Site "https://lichess.org/iD2FfGLe"]
+[Date "????.??.??"]
+[Round "?"]
+[White "?"]
+[Black "?"]
+[Result "*"]
+[FEN "r1bqk2r/2p2ppp/5n2/pN1Pp3/Pp1b4/1B6/1PPP1PPP/R1BQR1K1 b kq - 1 12"]
+[SetUp "1"]
+
+{ Jugaste Ba6 y perdiste 7.4 puntos. La mejor era Bg4. Encuentra la jugada correcta. } *
 
 [Event "ERROR GRAVE - jugada 16"]
 [Site "https://lichess.org/dHxMLLER"]
@@ -346,6 +286,30 @@
 
 { Jugaste Bg3+ y perdiste 7.2 puntos. La mejor era Qd2+. Encuentra la jugada correcta. } *
 
+[Event "ERROR GRAVE - jugada 13"]
+[Site "https://www.chess.com/game/live/169869121422"]
+[Date "????.??.??"]
+[Round "?"]
+[White "?"]
+[Black "?"]
+[Result "*"]
+[FEN "3r1rk1/ppp2ppp/2n2q2/4p3/2P1n1b1/NP2PN2/P1Q1B1PP/R3KR2 b Q - 4 13"]
+[SetUp "1"]
+
+{ Jugaste Rd2 y perdiste 7.2 puntos. La mejor era Nc5. Encuentra la jugada correcta. } *
+
+[Event "ERROR GRAVE - jugada 28"]
+[Site "https://www.chess.com/game/live/173194616130"]
+[Date "????.??.??"]
+[Round "?"]
+[White "?"]
+[Black "?"]
+[Result "*"]
+[FEN "r6k/p1P3pp/b2p4/7P/1r6/2N1p3/P7/R3K2R b - - 0 28"]
+[SetUp "1"]
+
+{ Jugaste Rab8 y perdiste 7.1 puntos. La mejor era h6. Encuentra la jugada correcta. } *
+
 [Event "ERROR GRAVE - jugada 18"]
 [Site "https://lichess.org/XpDDfKP5"]
 [Date "????.??.??"]
@@ -358,6 +322,18 @@
 
 { Jugaste e5+ y perdiste 7.0 puntos. La mejor era Qf5+. Encuentra la jugada correcta. } *
 
+[Event "ERROR GRAVE - jugada 13"]
+[Site "https://lichess.org/VN3G9Npi"]
+[Date "????.??.??"]
+[Round "?"]
+[White "?"]
+[Black "?"]
+[Result "*"]
+[FEN "r2qkb1r/pb1p1ppp/p2P1n2/6B1/8/P1N5/1PP2PPP/R2Q1RK1 b kq - 4 13"]
+[SetUp "1"]
+
+{ Jugaste h6 y perdiste 6.9 puntos. La mejor era Qb6. Encuentra la jugada correcta. } *
+
 [Event "ERROR GRAVE - jugada 20"]
 [Site "https://lichess.org/tpryDxys"]
 [Date "????.??.??"]
@@ -369,18 +345,6 @@
 [SetUp "1"]
 
 { Jugaste Qe2 y perdiste 6.7 puntos. La mejor era Qe4. Encuentra la jugada correcta. } *
-
-[Event "ERROR GRAVE - jugada 13"]
-[Site "https://lichess.org/PBF1jtzC"]
-[Date "????.??.??"]
-[Round "?"]
-[White "Juegan"]
-[Black "?"]
-[Result "*"]
-[FEN "r1b2rk1/pp1n1pb1/4pqpp/3p4/3P1Bn1/1BNQ1N2/PPP2PPP/4RRK1 w - - 10 13"]
-[SetUp "1"]
-
-{ Jugaste Qe3 y perdiste 6.5 puntos. La mejor era Bd6. Encuentra la jugada correcta. } *
 
 [Event "ERROR GRAVE [PIEZA ATRAPADA] - jugada 19"]
 [Site "https://lichess.org/tpryDxys"]
@@ -406,6 +370,18 @@
 
 { Jugaste Qd4 y perdiste 6.4 puntos. La mejor era Nxe5. Encuentra la jugada correcta. } *
 
+[Event "ERROR GRAVE - jugada 13"]
+[Site "https://lichess.org/PBF1jtzC"]
+[Date "????.??.??"]
+[Round "?"]
+[White "Juegan"]
+[Black "?"]
+[Result "*"]
+[FEN "r1b2rk1/pp1n1pb1/4pqpp/3p4/3P1Bn1/1BNQ1N2/PPP2PPP/4RRK1 w - - 10 13"]
+[SetUp "1"]
+
+{ Jugaste Qe3 y perdiste 6.4 puntos. La mejor era Bd6. Encuentra la jugada correcta. } *
+
 [Event "ERROR GRAVE - jugada 14"]
 [Site "https://lichess.org/cmiOv6Kn"]
 [Date "????.??.??"]
@@ -429,6 +405,18 @@
 [SetUp "1"]
 
 { Jugaste Bd5 y perdiste 6.3 puntos. La mejor era Qxe2. Encuentra la jugada correcta. } *
+
+[Event "ERROR GRAVE - jugada 44"]
+[Site "https://lichess.org/slYAezYf"]
+[Date "????.??.??"]
+[Round "?"]
+[White "?"]
+[Black "?"]
+[Result "*"]
+[FEN "5r2/2p1q3/8/kp1P4/8/2Q3P1/7P/6K1 b - - 11 44"]
+[SetUp "1"]
+
+{ Jugaste Kb6 y perdiste 6.2 puntos. La mejor era b4. Encuentra la jugada correcta. } *
 
 [Event "ERROR GRAVE - jugada 17"]
 [Site "https://lichess.org/kM1tMXl5"]
@@ -466,18 +454,6 @@
 
 { Jugaste Ke1 y perdiste 6.0 puntos. La mejor era Ke3. Encuentra la jugada correcta. } *
 
-[Event "ERROR GRAVE - jugada 16"]
-[Site "https://lichess.org/SOYOhsCv"]
-[Date "????.??.??"]
-[Round "?"]
-[White "?"]
-[Black "?"]
-[Result "*"]
-[FEN "q3kb1r/7p/5p2/1N2pb2/1n6/4p3/PPP2PPP/R2Q1RK1 b - - 0 16"]
-[SetUp "1"]
-
-{ Jugaste Rg8 y perdiste 6.0 puntos. La mejor era Qc6. Encuentra la jugada correcta. } *
-
 [Event "ERROR GRAVE - jugada 21"]
 [Site "https://www.chess.com/game/live/173194359798"]
 [Date "????.??.??"]
@@ -489,6 +465,18 @@
 [SetUp "1"]
 
 { Jugaste Nc1 y perdiste 5.9 puntos. La mejor era Bxd4. Encuentra la jugada correcta. } *
+
+[Event "ERROR GRAVE - jugada 16"]
+[Site "https://lichess.org/SOYOhsCv"]
+[Date "????.??.??"]
+[Round "?"]
+[White "?"]
+[Black "?"]
+[Result "*"]
+[FEN "q3kb1r/7p/5p2/1N2pb2/1n6/4p3/PPP2PPP/R2Q1RK1 b - - 0 16"]
+[SetUp "1"]
+
+{ Jugaste Rg8 y perdiste 5.8 puntos. La mejor era Qc6. Encuentra la jugada correcta. } *
 
 [Event "ERROR GRAVE - jugada 28"]
 [Site "https://lichess.org/FHFgjf6r"]
@@ -514,6 +502,54 @@
 
 { Jugaste Rxe7+ y perdiste 5.8 puntos. La mejor era Qb5+. Encuentra la jugada correcta. } *
 
+[Event "ERROR GRAVE - jugada 18"]
+[Site "https://lichess.org/RKcUNvXD"]
+[Date "????.??.??"]
+[Round "?"]
+[White "Juegan"]
+[Black "?"]
+[Result "*"]
+[FEN "3k3r/pQr2pp1/2pb2qp/8/4PBn1/8/PPP2PPP/3R2K1 w - - 0 18"]
+[SetUp "1"]
+
+{ Jugaste Rxd6+ y perdiste 5.7 puntos. La mejor era Qb4. Encuentra la jugada correcta. } *
+
+[Event "ERROR GRAVE - jugada 12"]
+[Site "https://lichess.org/oDruxeTd"]
+[Date "????.??.??"]
+[Round "?"]
+[White "Juegan"]
+[Black "?"]
+[Result "*"]
+[FEN "r2q1rk1/1pp1bppp/p1n2nb1/3Np1B1/2BpP1P1/3P1N1P/PPPQ1P2/2KR3R w - - 1 12"]
+[SetUp "1"]
+
+{ Jugaste Nh4 y perdiste 5.6 puntos. La mejor era Bxf6. Encuentra la jugada correcta. } *
+
+[Event "ERROR GRAVE - jugada 5"]
+[Site "https://www.chess.com/game/live/170474669138"]
+[Date "????.??.??"]
+[Round "?"]
+[White "?"]
+[Black "?"]
+[Result "*"]
+[FEN "rnbqk2r/ppp2ppp/5n2/2bpN3/8/2P3PB/PP1PPP1P/RNBQK2R b KQkq - 0 5"]
+[SetUp "1"]
+
+{ Jugaste Nc6 y perdiste 5.5 puntos. La mejor era Bxh3. Encuentra la jugada correcta. } *
+
+[Event "ERROR GRAVE - jugada 27"]
+[Site "https://lichess.org/rCHkfQUe"]
+[Date "????.??.??"]
+[Round "?"]
+[White "Juegan"]
+[Black "?"]
+[Result "*"]
+[FEN "r4rk1/pQ3p2/3Pp2p/2P3p1/q7/5NP1/5P1P/3R2K1 w - - 1 27"]
+[SetUp "1"]
+
+{ Jugaste d7 y perdiste 5.5 puntos. La mejor era Qb1. Encuentra la jugada correcta. } *
+
 [Event "ERROR GRAVE - jugada 20"]
 [Site "https://lichess.org/FHFgjf6r"]
 [Date "????.??.??"]
@@ -526,6 +562,18 @@
 
 { Jugaste f5 y perdiste 5.5 puntos. La mejor era Bc2. Encuentra la jugada correcta. } *
 
+[Event "ERROR GRAVE - jugada 7"]
+[Site "https://www.chess.com/game/live/170474529404"]
+[Date "????.??.??"]
+[Round "?"]
+[White "Juegan"]
+[Black "?"]
+[Result "*"]
+[FEN "r1bqk2r/pppp1Npp/2n5/4p3/2B1n3/8/PPPP1KPP/RNBQ3R w kq - 0 7"]
+[SetUp "1"]
+
+{ Jugaste Ke1 y perdiste 5.5 puntos. La mejor era Ke3. Encuentra la jugada correcta. } *
+
 [Event "ERROR GRAVE - jugada 14"]
 [Site "https://lichess.org/dHxMLLER"]
 [Date "????.??.??"]
@@ -537,6 +585,42 @@
 [SetUp "1"]
 
 { Jugaste Rxb2 y perdiste 5.5 puntos. La mejor era c5. Encuentra la jugada correcta. } *
+
+[Event "ERROR GRAVE - jugada 21"]
+[Site "https://www.chess.com/game/live/169869313606"]
+[Date "????.??.??"]
+[Round "?"]
+[White "Juegan"]
+[Black "?"]
+[Result "*"]
+[FEN "4rrk1/p1p2p2/7p/3q1p2/7b/2PP2P1/PP2QP1P/4RRK1 w - - 0 21"]
+[SetUp "1"]
+
+{ Jugaste gxh4 y perdiste 5.5 puntos. La mejor era Qxe8. Encuentra la jugada correcta. } *
+
+[Event "ERROR GRAVE - jugada 28"]
+[Site "https://lichess.org/rCHkfQUe"]
+[Date "????.??.??"]
+[Round "?"]
+[White "Juegan"]
+[Black "?"]
+[Result "*"]
+[FEN "r2r2k1/pQ1P1p2/4p2p/2P3p1/q7/5NP1/5P1P/3R2K1 w - - 1 28"]
+[SetUp "1"]
+
+{ Jugaste c6 y perdiste 5.5 puntos. La mejor era Rd4. Encuentra la jugada correcta. } *
+
+[Event "ERROR GRAVE - jugada 53"]
+[Site "https://lichess.org/DV1LYcTr"]
+[Date "????.??.??"]
+[Round "?"]
+[White "Juegan"]
+[Black "?"]
+[Result "*"]
+[FEN "8/4PQpk/2p4p/1q6/8/3K4/7P/8 w - - 7 53"]
+[SetUp "1"]
+
+{ Jugaste Ke3 y perdiste 5.4 puntos. La mejor era Qc4. Encuentra la jugada correcta. } *
 
 [Event "ERROR GRAVE - jugada 25"]
 [Site "https://lichess.org/hPhlxaDs"]
@@ -586,18 +670,6 @@
 
 { Jugaste Nd4 y perdiste 5.1 puntos. La mejor era Rxg2+. Encuentra la jugada correcta. } *
 
-[Event "ERROR GRAVE - jugada 22"]
-[Site "https://www.chess.com/game/live/173194616130"]
-[Date "????.??.??"]
-[Round "?"]
-[White "?"]
-[Black "?"]
-[Result "*"]
-[FEN "r1b2r1k/p1p3pp/2P5/7P/1b1P1p2/4P3/PP1BK3/RN5R b - - 0 22"]
-[SetUp "1"]
-
-{ Jugaste fxe3 y perdiste 5.0 puntos. La mejor era Ba6+. Encuentra la jugada correcta. } *
-
 [Event "ERROR GRAVE - jugada 27"]
 [Site "https://lichess.org/FHFgjf6r"]
 [Date "????.??.??"]
@@ -609,6 +681,18 @@
 [SetUp "1"]
 
 { Jugaste Qf4 y perdiste 5.0 puntos. La mejor era Bxd5. Encuentra la jugada correcta. } *
+
+[Event "ERROR GRAVE - jugada 31"]
+[Site "https://lichess.org/slYAezYf"]
+[Date "????.??.??"]
+[Round "?"]
+[White "?"]
+[Black "?"]
+[Result "*"]
+[FEN "2k3r1/p1p5/6q1/Pp1P4/1P5p/2P3P1/5Q1P/4R1K1 b - - 0 31"]
+[SetUp "1"]
+
+{ Jugaste h3 y perdiste 4.9 puntos. La mejor era hxg3. Encuentra la jugada correcta. } *
 
 [Event "ERROR GRAVE - jugada 15"]
 [Site "https://lichess.org/cmiOv6Kn"]
@@ -622,98 +706,14 @@
 
 { Jugaste Nd2 y perdiste 4.9 puntos. La mejor era dxe6. Encuentra la jugada correcta. } *
 
-[Event "ERROR GRAVE - jugada 24"]
-[Site "https://lichess.org/g3p8xQ7k"]
+[Event "ERROR GRAVE - jugada 15"]
+[Site "https://lichess.org/7OcHTzXP"]
 [Date "????.??.??"]
 [Round "?"]
 [White "?"]
 [Black "?"]
 [Result "*"]
-[FEN "6k1/p4pp1/n6p/1pbR4/1P6/P3B1P1/2r2P1P/6K1 b - - 0 24"]
+[FEN "r1b1k2r/pp2q1p1/3b3p/3Qpn2/4NP2/2P5/PP4PP/RNB1R1K1 b kq - 1 15"]
 [SetUp "1"]
 
-{ Jugaste Nc7 y perdiste 4.8 puntos. La mejor era Bxe3. Encuentra la jugada correcta. } *
-
-[Event "ERROR GRAVE - jugada 13"]
-[Site "https://lichess.org/3scsVwaY"]
-[Date "????.??.??"]
-[Round "?"]
-[White "Juegan"]
-[Black "?"]
-[Result "*"]
-[FEN "r2qkbnr/ppp2pp1/1n1p3p/4P2b/3N1B2/1PN2P2/P1P1Q1PP/R4RK1 w kq - 1 13"]
-[SetUp "1"]
-
-{ Jugaste Ndb5 y perdiste 4.7 puntos. La mejor era exd6+. Encuentra la jugada correcta. } *
-
-[Event "ERROR GRAVE - jugada 7"]
-[Site "https://lichess.org/iejnoYIY"]
-[Date "????.??.??"]
-[Round "?"]
-[White "?"]
-[Black "?"]
-[Result "*"]
-[FEN "N2q1b1r/pp1k1ppp/2n1pn2/3p1b2/2PP1B2/8/PP2PPPP/R2QKBNR b KQ - 0 7"]
-[SetUp "1"]
-
-{ Jugaste Qxa8 y perdiste 4.7 puntos. La mejor era Bb4+. Encuentra la jugada correcta. } *
-
-[Event "ERROR GRAVE - jugada 6"]
-[Site "https://lichess.org/tpryDxys"]
-[Date "????.??.??"]
-[Round "?"]
-[White "Juegan"]
-[Black "?"]
-[Result "*"]
-[FEN "rn1qkbnr/pp2pppp/2p3b1/3p4/3PP1P1/5N1P/PPP2P2/RNBQKB1R w KQkq - 1 6"]
-[SetUp "1"]
-
-{ Jugaste Bd3 y perdiste 4.7 puntos. La mejor era exd5. Encuentra la jugada correcta. } *
-
-[Event "ERROR GRAVE - jugada 11"]
-[Site "https://lichess.org/kM1tMXl5"]
-[Date "????.??.??"]
-[Round "?"]
-[White "?"]
-[Black "?"]
-[Result "*"]
-[FEN "r1bq2kr/ppp3pp/8/2bPn3/3pQ3/8/PPP2PPP/RNB2RK1 b - - 2 11"]
-[SetUp "1"]
-
-{ Jugaste Qd6 y perdiste 4.6 puntos. La mejor era Ng4. Encuentra la jugada correcta. } *
-
-[Event "ERROR GRAVE - jugada 10"]
-[Site "https://www.chess.com/game/live/171361027808"]
-[Date "????.??.??"]
-[Round "?"]
-[White "?"]
-[Black "?"]
-[Result "*"]
-[FEN "r2q1rk1/1pp2ppp/p1n1bn2/2b1p3/2PpP3/PP1P1N1P/1BQN1PP1/R3KB1R b KQ - 1 10"]
-[SetUp "1"]
-
-{ Jugaste b5 y perdiste 4.6 puntos. La mejor era a5. Encuentra la jugada correcta. } *
-
-[Event "ERROR GRAVE - jugada 10"]
-[Site "https://www.chess.com/game/live/171582381824"]
-[Date "????.??.??"]
-[Round "?"]
-[White "Juegan"]
-[Black "?"]
-[Result "*"]
-[FEN "r2qk2r/ppp1npb1/2np2pp/4p3/2BPP3/2N1BP1P/PPPQ1P2/R3K2R w KQkq - 1 10"]
-[SetUp "1"]
-
-{ Jugaste O-O-O y perdiste 4.4 puntos. La mejor era dxe5. Encuentra la jugada correcta. } *
-
-[Event "Error - jugada 30"]
-[Site "https://lichess.org/STy178dt"]
-[Date "????.??.??"]
-[Round "?"]
-[White "Juegan"]
-[Black "?"]
-[Result "*"]
-[FEN "r2kr3/p1p1b1Bp/1p1pQpp1/3Pn3/2N5/7P/6PK/4R3 w - - 6 30"]
-[SetUp "1"]
-
-{ Jugaste g4 y perdiste 4.4 puntos. La mejor era Nxe5. Encuentra la jugada correcta. } *
+{ Jugaste exf4 y perdiste 4.8 puntos. La mejor era Bc7. Encuentra la jugada correcta. } *
