@@ -79,6 +79,22 @@ def cmd_repertoire(_: argparse.Namespace) -> int:
     return 0
 
 
+def cmd_study(args: argparse.Namespace) -> int:
+    """Descarga un estudio publico de Lichess a la carpeta studies/."""
+    from . import studies
+
+    try:
+        destino = studies.import_lichess_study(args.url, args.name)
+    except Exception as exc:
+        print(f"No se pudo importar: {exc}")
+        return 1
+    chapters = studies.load_studies()
+    total = sum(len(c) for c in chapters.values())
+    print(f"Guardado en {destino}")
+    print(f"Estudios disponibles: {len(chapters)} archivos, {total} capitulos")
+    return 0
+
+
 def cmd_report(_: argparse.Namespace) -> int:
     config = load_config()
     with store.connect() as conn:
@@ -149,6 +165,11 @@ def main(argv: list[str] | None = None) -> int:
     subparsers.add_parser(
         "repertoire", help="recalcular fugas tras editar repertoire.pgn"
     ).set_defaults(func=cmd_repertoire)
+
+    study = subparsers.add_parser("study", help="importar un estudio publico de Lichess")
+    study.add_argument("url", help="URL o id del estudio (ej. lichess.org/study/abcd1234)")
+    study.add_argument("--name", help="nombre del archivo en studies/")
+    study.set_defaults(func=cmd_study)
 
     subparsers.add_parser("report", help="tarjeta de progreso en consola").set_defaults(
         func=cmd_report

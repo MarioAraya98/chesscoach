@@ -1,30 +1,30 @@
-[Event "1. La Opera - por que el desarrollo gana partidas"]
+[Event "1. La Opera - el desarrollo gana partidas"]
 [Site "Paris"]
 [Date "1858.??.??"]
 [White "Paul Morphy"]
 [Black "Duque de Brunswick y Conde Isouard"]
 [Result "1-0"]
-[Annotator "Comentarios originales, enfocados en las fugas de Mario"]
+[Annotator "Tus notas"]
 
-{ Paris, 1858. Morphy jugo esta partida en un palco de la Opera, entre acto y acto. Es la mejor demostracion que existe de una sola idea: EL DESARROLLO ES TIEMPO, Y EL TIEMPO ES MATERIAL. Mira cuantas piezas tiene cada bando en juego cuando cae el mate. }
-1. e4 e5 2. Nf3 { Ataca e5 y desarrolla. Toda jugada de apertura deberia hacer dos cosas a la vez. Tu sistema con blancas (e4-Nf3-Bc4-c3-d4-O-O) sigue este principio: por eso funciona cuando no te sales de el. }
-2... d6 { La Defensa Philidor. Solida pero pasiva: encierra al alfil de f8. }
-3. d4 Bg4 { Aqui empieza el problema de las negras. Clavan el caballo, pero sacan el alfil ANTES de resolver la tension en el centro. Regla practica: no salgas a atacar mientras tu rey siga sin enrocar. }
-4. dxe5 Bxf3 { Forzado. Si 4...dxe5 5.Qxd8+ Kxd8 y las negras pierden el enroque para siempre. Ya pagaron por haber jugado Bg4 antes de tiempo. }
-5. Qxf3 dxe5 6. Bc4 { Amenaza tranquila: el alfil apunta a f7 junto con la dama. No hay jaque ni captura, pero la posicion ya esta decidida. Estas son las jugadas que no ves cuando mueves en 8 segundos. }
-6... Nf6 { Ataca la dama blanca y de paso defiende. Veamos que pasa. }
-7. Qb3 { Ahora si hay doble ataque real: b7 y f7. La dama trabaja en dos frentes porque las negras nunca desarrollaron el flanco de dama. }
-7... Qe7 { Unica. Defiende f7, pero fijate en el precio: la dama tapa a su propio alfil de f8, que ya estaba encerrado. Dos piezas desarrolladas y ninguna coordinada. }
-8. Nc3 { Morphy ni siquiera cobra el peon con Qxb7: prefiere meter otra pieza al ataque. ESTA es la leccion central. Con ventaja de desarrollo, sumar atacantes vale mas que sumar peones. Compara con tus partidas: cuando vas ganando te vas a comer peones a a2 y c1, y el caballo queda atrapado. }
-8... c6 9. Bg5 { Cuarta pieza al ataque. Clava el caballo de f6, el unico defensor decente. }
-9... b5 { Desesperacion: las negras intentan ganar tiempo atacando el alfil. }
-10. Nxb5 { El sacrificio. No es intuicion, es calculo: cambia una pieza por la apertura total de las lineas hacia el rey negro, que sigue en el centro. }
-10... cxb5 11. Bxb5+ Nbd7 { Ahora si desarrollan el caballo, pero clavado y como carne de canon. Llegar tarde al desarrollo es peor que no llegar. }
-12. O-O-O { La jugada que mas me gusta. En pleno ataque, Morphy pone su rey a salvo Y activa la torre en la columna d, justo donde esta clavado el caballo. Seguridad y ataque en un solo movimiento. }
-12... Rd8 13. Rxd7 { Segundo sacrificio: elimina al defensor. }
-13... Rxd7 14. Rd1 { Todas las piezas blancas participan: dama, dos alfiles y torre contra un rey sin enroque. Las negras tienen mas material y estan perdidas. }
-14... Qe6 15. Bxd7+ Nxd7 16. Qb8+ { Ultimo sacrificio: la dama se entrega para desviar al caballo de d7. }
-16... Nxb8 17. Rd8# { Mate. Morphy entrego dama y torre, y gano porque TODAS sus piezas jugaban. Las negras tenian mas material, dormido. } 1-0
+{ [[COACH]] Paris, 1858. Morphy jugo esta partida en un palco de la Opera, entre acto y acto. Demuestra una sola idea: EL DESARROLLO ES TIEMPO, Y EL TIEMPO ES MATERIAL. Conta cuantas piezas tiene cada bando en juego cuando cae el mate. }
+1. e4 e5 2. Nf3 { [[COACH]] Ataca e5 y desarrolla. Toda jugada de apertura deberia hacer dos cosas a la vez. Tu sistema con blancas (e4-Nf3-Bc4-c3-d4-O-O) sigue este principio: por eso funciona cuando no te salis de el. }
+2... d6 { [[COACH]] La Defensa Philidor. Solida pero pasiva: encierra al alfil de f8. }
+3. d4 Bg4 { [[COACH]] Aca empieza el problema de las negras. Clavan el caballo, pero sacan el alfil ANTES de resolver la tension en el centro. Regla practica: no salgas a atacar mientras tu rey siga sin enrocar. }
+4. dxe5 Bxf3 { [[COACH]] Forzado. Si 4...dxe5 5.Qxd8+ Kxd8 y las negras pierden el enroque para siempre. Ya pagaron por haber jugado Bg4 antes de tiempo. }
+5. Qxf3 dxe5 6. Bc4 { [[COACH]] Amenaza tranquila: el alfil apunta a f7 junto con la dama. No hay jaque ni captura, pero la posicion ya esta decidida. Estas son las jugadas que no ves cuando moves en 8 segundos. }
+6... Nf6 { [[COACH]] Ataca la dama blanca y de paso defiende. Veamos que pasa. }
+7. Qb3 { [[COACH]] Ahora si hay doble ataque real: b7 y f7. La dama trabaja en dos frentes porque las negras nunca desarrollaron el flanco de dama. }
+7... Qe7 { [[COACH]] Unica. Defiende f7, pero fijate en el precio: la dama tapa a su propio alfil de f8, que ya estaba encerrado. Dos piezas desarrolladas y ninguna coordinada. }
+8. Nc3 { [[COACH]] Morphy ni siquiera cobra el peon con Qxb7: prefiere meter otra pieza al ataque. ESTA es la leccion central. Con ventaja de desarrollo, sumar atacantes vale mas que sumar peones. Compara con tus partidas: cuando vas ganando te vas a comer peones a a2 y c1, y el caballo queda atrapado. }
+8... c6 9. Bg5 { [[COACH]] Cuarta pieza al ataque. Clava el caballo de f6, el unico defensor decente. }
+9... b5 { [[COACH]] Desesperacion: las negras intentan ganar tiempo atacando el alfil. }
+10. Nxb5 { [[COACH]] El sacrificio. No es intuicion, es calculo: cambia una pieza por la apertura total de las lineas hacia el rey negro, que sigue en el centro. }
+10... cxb5 11. Bxb5+ Nbd7 { [[COACH]] Ahora si desarrollan el caballo, pero clavado y como carne de canon. Llegar tarde al desarrollo es peor que no llegar. }
+12. O-O-O { [[COACH]] La jugada que mas me gusta. En pleno ataque, Morphy pone su rey a salvo Y activa la torre en la columna d, justo donde esta clavado el caballo. Seguridad y ataque en un solo movimiento. }
+12... Rd8 13. Rxd7 { [[COACH]] Segundo sacrificio: elimina al defensor. }
+13... Rxd7 14. Rd1 { [[COACH]] Todas las piezas blancas participan: dama, dos alfiles y torre contra un rey sin enroque. Las negras tienen mas material y estan perdidas. }
+14... Qe6 15. Bxd7+ Nxd7 16. Qb8+ { [[COACH]] Ultimo sacrificio: la dama se entrega para desviar al caballo de d7. }
+16... Nxb8 17. Rd8# { [[COACH]] Mate. Morphy entrego dama y torre, y gano porque TODAS sus piezas jugaban. Las negras tenian mas material, dormido. } 1-0
 
 [Event "2. La rutina de las 3 preguntas"]
 [Site "Estudio"]
@@ -32,13 +32,53 @@
 [White "Sistema con blancas"]
 [Black "Italiana"]
 [Result "*"]
-[Annotator "Rutina anti-blunder"]
+[Annotator "Tus notas"]
 
-{ Este capitulo no es una partida famosa: es la rutina que quiero que hagas mentalmente en CADA jugada. Recorremos una Italiana normal y en cada momento te muestro que deberias estar mirando. }
-1. e4 e5 2. Nf3 Nc6 3. Bc4 Bc5 { Posicion de partida de tu repertorio con blancas. Antes de seguir, las tres preguntas. 1) Jaques del rival: ninguno. 2) Capturas del rival: Bxf2+ existe, pero pierde pieza tras Kxf2. 3) Que amenaza su ultima jugada: el alfil de c5 mira f2. Anotado, no urgente. }
-4. c3 { Prepara d4 y le da retirada al alfil por b3 si viene Na5. Esta es tu jugada de sistema. En tus partidas la reemplazaste por Nc3 dos veces y perdiste las dos: Nc3 bloquea el peon c y te deja sin el centro. }
-4... Nf6 5. d4 exd4 6. cxd4 Bb4+ { Ahora si: el jaque cambia todo, la pregunta 1 se responde sola. Solo hay tres formas de responder a un jaque: mover el rey, capturar la pieza, o interponer. }
-7. Bd2 { Interponer con desarrollo. Nunca respondas un jaque con la primera jugada legal que veas: elegi la que ademas te desarrolle. }
-7... Bxd2+ 8. Nbxd2 { Recapturar con la pieza menos util. El caballo de b1 no tenia mejor casilla. }
-8... d5 9. exd5 Nxd5 10. O-O { Rey seguro, torre conectada, centro sano. Salir de la apertura asi te da 20 jugadas comodas. Es exactamente lo que NO pasa cuando te sales del repertorio en la jugada 4. }
-10... O-O 11. Re1 { Torre a la columna abierta. Ultima idea: cuando no sepas que jugar y no haya nada tactico, mejora tu peor pieza. } *
+{ [[COACH]] Este capitulo no es una partida celebre: es la rutina que quiero que hagas mentalmente en CADA jugada. Recorremos una Italiana normal y en cada momento te muestro que deberias estar mirando. }
+1. e4 e5 2. Nf3 Nc6 3. Bc4 Bc5 { [[COACH]] Posicion de partida de tu repertorio con blancas. Antes de seguir, las tres preguntas. 1) Jaques del rival: ninguno. 2) Capturas del rival: Bxf2+ existe, pero pierde pieza tras Kxf2. 3) Que amenaza su ultima jugada: el alfil de c5 mira f2. Anotado, no urgente. }
+4. c3 { [[COACH]] Prepara d4 y le da retirada al alfil por b3 si viene Na5. Esta es tu jugada de sistema. En tus partidas la reemplazaste por Nc3 dos veces y perdiste las dos: Nc3 bloquea el peon c y te deja sin el centro. }
+4... Nf6 5. d4 exd4 6. cxd4 Bb4+ { [[COACH]] Ahora si: el jaque cambia todo, la pregunta 1 se responde sola. Solo hay tres formas de responder a un jaque: mover el rey, capturar la pieza, o interponer. }
+7. Bd2 { [[COACH]] Interponer con desarrollo. Nunca respondas un jaque con la primera jugada legal que veas: elegi la que ademas te desarrolle. }
+7... Bxd2+ 8. Nbxd2 { [[COACH]] Recapturar con la pieza menos util. El caballo de b1 no tenia mejor casilla. }
+8... d5 9. exd5 Nxd5 10. O-O { [[COACH]] Rey seguro, torre conectada, centro sano. Salir de la apertura asi te da 20 jugadas comodas. Es exactamente lo que NO pasa cuando te salis del repertorio en la jugada 4. }
+10... O-O 11. Re1 { [[COACH]] Torre a la columna abierta. Ultima idea: cuando no sepas que jugar y no haya nada tactico, mejora tu peor pieza. } *
+
+[Event "3. La Inmortal - cuando el material no importa"]
+[Site "Londres"]
+[Date "1851.??.??"]
+[White "Adolf Anderssen"]
+[Black "Lionel Kieseritzky"]
+[Result "1-0"]
+[Annotator "Tus notas"]
+
+{ [[COACH]] La partida mas famosa de la historia. Anderssen entrega alfil, DOS torres y la dama, y da mate con las tres piezas menores que le quedan. Ojo: no la estudies para imitarla, sino para entender que el material solo vale si tus piezas hacen algo. }
+1. e4 e5 2. f4 { [[COACH]] Gambito de Rey. Te lo puse en el repertorio con la respuesta 2...exf4 3.Nf3 d5, que devuelve el peon y iguala. Aca vemos por que conviene devolverlo. }
+2... exf4 3. Bc4 Qh4+ { [[COACH]] Las negras sacan la dama en la jugada 3 y dan jaque. Se siente potente y es un error tipico de tu nivel: la dama temprana no gana nada y va a ser perseguida durante 15 jugadas. }
+4. Kf1 b5 { [[COACH]] Las blancas pierden el enroque, pero mira quien tiene el desarrollo. Fijate cuantos tiempos gastan las negras moviendo dama y peones. }
+5. Bxb5 Nf6 6. Nf3 { [[COACH]] Con ataque a la dama. Cada jugada blanca desarrolla Y molesta. Ese es el patron a copiar. }
+6... Qh6 7. d3 Nh5 8. Nh4 Qg5 9. Nf5 c6 10. g4 Nf6 11. Rg1 { [[COACH]] Aca Anderssen ofrece el alfil de b5. La cuenta no es de material: es de tiempo. Cada captura negra les cuesta un tiempo mas con piezas que ya estan mal puestas. }
+11... cxb5 12. h4 Qg6 13. h5 Qg5 14. Qf3 Ng8 { [[COACH]] Mira el tablero: las negras tienen mas material y su desarrollo volvio a cero. El caballo regreso a g8. Esto es lo que pasa cuando persiguis material sin plan. }
+15. Bxf4 Qf6 16. Nc3 Bc5 17. Nd5 { [[COACH]] Con ataque a la dama otra vez. Ni una jugada blanca es defensiva. }
+17... Qxb2 18. Bd6 { [[COACH]] La jugada clave: ofrece la torre de a1 para que la dama negra se aleje todavia mas del rey. }
+18... Bxg1 19. e5 { [[COACH]] Cierra la diagonal de la dama negra hacia g7. Las negras tienen torre y alfil de mas, y no pueden mover nada util. }
+19... Qxa1+ 20. Ke2 Na6 21. Nxg7+ Kd8 22. Qf6+ { [[COACH]] La entrega de dama. Fuerza Nxf6 y despeja e7. }
+22... Nxf6 23. Be7# { [[COACH]] Mate con alfil y dos caballos. Las negras terminaron con dama, torre y alfil de ventaja. Leccion para vos: cuando vayas ganando material, pregunta siempre cuantas de tus piezas estan realmente jugando. } 1-0
+
+[Event "4. La Siempreviva - coordinar antes de rematar"]
+[Site "Berlin"]
+[Date "1852.??.??"]
+[White "Adolf Anderssen"]
+[Black "Jean Dufresne"]
+[Result "1-0"]
+[Annotator "Tus notas"]
+
+{ [[COACH]] Hermana de la Inmortal, pero mas util para vos: el final es una combinacion forzada de cinco jugadas que se puede CALCULAR. Es justo el tipo de secuencia que ya sabes ver cuando te das tiempo. }
+1. e4 e5 2. Nf3 Nc6 3. Bc4 Bc5 4. b4 { [[COACH]] Gambito Evans. Entrega un peon para ganar tiempo y centro. Es la version agresiva de tu Italiana con c3. }
+4... Bxb4 5. c3 Ba5 6. d4 exd4 7. O-O { [[COACH]] Rey a salvo antes de cobrar nada. Anota este orden: seguridad primero, botin despues. Es exactamente lo que fallo en tus derrotas. }
+7... d3 { [[COACH]] Las negras devuelven el peon para frenar el centro blanco. Buena idea practica: cuando el rival te da material para atacarte, devolverlo suele apagar el ataque. }
+8. Qb3 Qf6 9. e5 Qg6 10. Re1 Nge7 11. Ba3 { [[COACH]] Cuenta las piezas activas: blancas cuatro, negras dos. El alfil de a3 impide el enroque negro para siempre. }
+11... b5 12. Qxb5 Rb8 13. Qa4 Bb6 14. Nbd2 Bb7 15. Ne4 Qf5 16. Bxd3 Qh5 17. Nf6+ { [[COACH]] Ofrece el caballo para romper el enroque que las negras nunca llegaron a hacer. }
+17... gxf6 18. exf6 Rg8 19. Rad1 { [[COACH]] La jugada de la partida y la mas instructiva: en vez de rematar ya, mete la ULTIMA pieza que quedaba dormida. Antes de lanzar el ataque, revisa si te falta alguien por invitar. }
+19... Qxf3 { [[COACH]] Las negras amenazan mate en g2. Aca es donde la mayoria entra en panico. Anderssen calculo que llega primero. }
+20. Rxe7+ Nxe7 21. Qxd7+ { [[COACH]] Sacrificio de dama: atrae al rey a la casilla donde los alfiles lo cazan. }
+21... Kxd7 22. Bf5+ Ke8 23. Bd7+ Kf8 24. Bxe7# { [[COACH]] Mate. Toda la secuencia desde la jugada 20 es forzada: cada jugada negra es unica. Eso significa que era CALCULABLE. Con 60 segundos de calculo, esto esta a tu alcance hoy. } 1-0
