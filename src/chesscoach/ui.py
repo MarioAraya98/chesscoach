@@ -15,7 +15,6 @@ import streamlit as st
 # Solo la etiqueta <svg> de apertura: si se tocan todos los elementos se borran
 # tambien los width/height de los <rect> y el tablero se queda sin casillas.
 _SVG_ABRE = re.compile(r"<svg\b[^>]*>")
-_DIMENSION = re.compile(r'\s(?:width|height)="[^"]*"')
 
 COMPACTO = """
 <style>
@@ -60,11 +59,15 @@ def compactar() -> None:
 
 
 def _escalable(svg: str) -> str:
-    """Deja que el SVG llene su contenedor."""
+    """Permite que el tablero se encoja en pantallas angostas.
+
+    Se CONSERVAN los atributos width/height del SVG: son los que le dan altura
+    intrinseca al elemento. Sin ellos Streamlit mide el bloque como si midiera
+    cero y el tablero termina dibujado encima de los textos vecinos.
+    """
 
     def arreglar(etiqueta: re.Match[str]) -> str:
-        limpia = _DIMENSION.sub("", etiqueta.group(0))
-        return limpia[:-1] + ' style="width:100%;height:100%;display:block">'
+        return etiqueta.group(0)[:-1] + ' style="max-width:100%;height:auto;display:block">'
 
     return _SVG_ABRE.sub(arreglar, svg, count=1)
 
@@ -81,15 +84,13 @@ def tablero(
     svg = chess.svg.board(
         board,
         orientation=orientacion,
+        size=maximo,
         coordinates=True,
         squares=chess.SquareSet(resaltar) if resaltar else None,
         arrows=flechas,
     )
-    # El contenedor lleva aspect-ratio para que su altura se sepa antes de medir
-    # el SVG; sin eso Streamlit fija un alto menor y recorta la ultima fila.
     st.markdown(
-        "<div style='display:flex;justify-content:center;margin-bottom:.4rem'>"
-        f"<div style='width:min(94vw,{maximo}px);aspect-ratio:1/1'>{_escalable(svg)}</div>"
-        "</div>",
+        "<div style='display:flex;justify-content:center;margin:.55rem 0 .45rem'>"
+        f"{_escalable(svg)}</div>",
         unsafe_allow_html=True,
     )

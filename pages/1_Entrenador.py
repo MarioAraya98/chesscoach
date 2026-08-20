@@ -29,7 +29,7 @@ PREGUNTAS = (
     "¿Qué **capturas** tiene el rival?",
     "¿Qué amenaza su **última jugada**?",
 )
-LADO = 300
+LADO = 380
 POR_FILA = 4  # botones por fila: entra comodo en un telefono
 
 
