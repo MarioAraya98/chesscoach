@@ -18,8 +18,12 @@ from chesscoach.config import PUZZLES_PATH, load_config  # noqa: E402
 st.set_page_config(page_title="ChessCoach — Panel de Mario", page_icon="♟️", layout="centered")
 ui.compactar()
 
-COLOR = {"ok": "#1a7f37", "cerca": "#bf8700", "lejos": "#cf222e", "sin datos": "#8b949e"}
+# Colores legibles en tema claro y oscuro: nada de fondos claros fijos, porque
+# en modo oscuro el texto va en blanco y el bloque queda ilegible.
+COLOR = {"ok": "#2ea043", "cerca": "#d29922", "lejos": "#f85149", "sin datos": "#8b949e"}
 ICONO = {"ok": "✅", "cerca": "🟡", "lejos": "🔴", "sin datos": "⚪"}
+FONDO = "rgba(128,128,128,.14)"
+BORDE = "rgba(128,128,128,.35)"
 
 
 @st.cache_data(ttl=60)
@@ -100,9 +104,9 @@ insignias = []
 for fuente, grupo in ratings.groupby("source"):
     ultimo = int(grupo["my_rating"].iloc[-1])
     delta = ultimo - int(grupo["my_rating"].iloc[0])
-    signo = "#1a7f37" if delta >= 0 else "#cf222e"
+    signo = "#2ea043" if delta >= 0 else "#f85149"
     insignias.append(
-        f"<span style='background:#f0f2f6;border-radius:8px;padding:.25rem .5rem;"
+        f"<span style='background:{FONDO};border-radius:8px;padding:.25rem .5rem;"
         f"margin-right:.4rem;white-space:nowrap'>{fuente} <b>{ultimo}</b> "
         f"<span style='color:{signo}'>{delta:+d}</span></span>"
     )
@@ -122,7 +126,7 @@ st.markdown(
 st.markdown("#### 🎯 Qué entrenar hoy")
 for indice, tarea in enumerate(metrics.today_plan(vista, config), start=1):
     st.markdown(
-        f"<div style='background:#f6f8fa;border-left:4px solid #0969da;border-radius:6px;"
+        f"<div style='background:{FONDO};border-left:4px solid #4c8eda;border-radius:6px;"
         f"padding:.5rem .7rem;margin-bottom:.35rem;font-size:.92rem'>"
         f"<b>{indice}.</b> {tarea}</div>",
         unsafe_allow_html=True,
@@ -141,13 +145,13 @@ for fila in filas:
     for columna, metrica in zip(columnas, fila, strict=False):
         pct = avance(metrica) * 100
         columna.markdown(
-            f"<div style='border:1px solid #e2e5e9;border-radius:10px;padding:.5rem .7rem'>"
+            f"<div style='border:1px solid {BORDE};border-radius:10px;padding:.5rem .7rem'>"
             f"<div style='font-size:.82rem;opacity:.8'>{ICONO[metrica.status]} {metrica.label}</div>"
             f"<div style='display:flex;align-items:baseline;gap:.4rem'>"
             f"<span style='font-size:1.5rem;font-weight:700;color:{COLOR[metrica.status]}'>"
             f"{valor(metrica)}</span>"
             f"<span style='font-size:.78rem;opacity:.6'>meta {meta(metrica)}</span></div>"
-            f"<div style='background:#e9ecef;border-radius:99px;height:5px;margin-top:.3rem'>"
+            f"<div style='background:{FONDO};border-radius:99px;height:5px;margin-top:.3rem'>"
             f"<div style='width:{pct:.0f}%;background:{COLOR[metrica.status]};"
             f"height:5px;border-radius:99px'></div></div></div>",
             unsafe_allow_html=True,
