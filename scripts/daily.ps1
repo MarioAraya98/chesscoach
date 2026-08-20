@@ -17,6 +17,8 @@ Write-Log '--- inicio ---'
 try {
     & $python -m chesscoach.cli sync      2>&1 | Tee-Object -FilePath $log -Append
     & $python -m chesscoach.cli analyze --limit 25 2>&1 | Tee-Object -FilePath $log -Append
+    # Las explicaciones se calculan aqui porque la nube no tiene Stockfish.
+    & $python -m chesscoach.cli explain   2>&1 | Tee-Object -FilePath $log -Append
     & $python -m chesscoach.cli puzzles   2>&1 | Tee-Object -FilePath $log -Append
 
     # Publicar solo si ya se configuro el repo remoto para el panel en la nube.
