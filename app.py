@@ -2,12 +2,18 @@
 
 from __future__ import annotations
 
-import altair as alt
-import pandas as pd
-import streamlit as st
+import sys
+from pathlib import Path
 
-from chesscoach import metrics, store
-from chesscoach.config import PUZZLES_PATH, load_config
+# En la nube el paquete no se instala: hay que exponer src/ antes de importarlo.
+sys.path.insert(0, str(Path(__file__).resolve().parent / "src"))
+
+import altair as alt  # noqa: E402
+import pandas as pd  # noqa: E402
+import streamlit as st  # noqa: E402
+
+from chesscoach import metrics, store  # noqa: E402
+from chesscoach.config import PUZZLES_PATH, load_config  # noqa: E402
 
 st.set_page_config(page_title="ChessCoach - Panel de Mario", page_icon="♟️", layout="wide")
 

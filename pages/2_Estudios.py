@@ -2,11 +2,17 @@
 
 from __future__ import annotations
 
-import chess
-import chess.svg
-import streamlit as st
+import sys
+from pathlib import Path
 
-from chesscoach import studies
+# En la nube el paquete no se instala: hay que exponer src/ antes de importarlo.
+sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "src"))
+
+import chess  # noqa: E402
+import chess.svg  # noqa: E402
+import streamlit as st  # noqa: E402
+
+from chesscoach import studies  # noqa: E402
 
 st.set_page_config(page_title="Estudios — ChessCoach", page_icon="📖", layout="wide")
 

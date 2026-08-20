@@ -3,14 +3,19 @@
 from __future__ import annotations
 
 import random
+import sys
 import time
+from pathlib import Path
 
-import chess
-import chess.svg
-import streamlit as st
+# En la nube el paquete no se instala: hay que exponer src/ antes de importarlo.
+sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "src"))
 
-from chesscoach import metrics, store, training
-from chesscoach.config import load_config
+import chess  # noqa: E402
+import chess.svg  # noqa: E402
+import streamlit as st  # noqa: E402
+
+from chesscoach import metrics, store, training  # noqa: E402
+from chesscoach.config import load_config  # noqa: E402
 
 st.set_page_config(page_title="Entrenador — ChessCoach", page_icon="🎯", layout="centered")
 

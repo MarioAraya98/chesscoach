@@ -1,12 +1,10 @@
 # Dependencias del panel en Streamlit Community Cloud.
 # La nube solo LEE data/games.db: el analisis con Stockfish corre en la PC.
+# El paquete NO se instala aqui: app.py y las paginas agregan src/ al sys.path,
+# porque un `.` en este archivo rompe el build en Streamlit Cloud.
 chess>=1.11.1
 httpx>=0.27
 streamlit>=1.38
 pandas>=2.2
 altair>=5.4
 pyyaml>=6.0
-
-# El propio paquete: sin esto, `from chesscoach import ...` falla en la nube
-# porque el codigo vive en src/ y no estaria en el sys.path.
-.
