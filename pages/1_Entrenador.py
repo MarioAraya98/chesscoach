@@ -81,10 +81,12 @@ def siguiente() -> None:
     estado.inicio = time.time()
     estado.origen = None
     estado.ultimo_gesto = None
+    estado.jugada_hecha = None
 
 
-def resolver(san: str, fila) -> None:
-    estado.veredicto = training.judge(san, fila.san, fila.best_san)
+def resolver(jugada: chess.Move, fila) -> None:
+    estado.veredicto = training.judge(tablero.san(jugada), fila.san, fila.best_san)
+    estado.jugada_hecha = jugada.uci()
     estado.stats[estado.veredicto.status] += 1
     estado.fase = "resultado"
 
@@ -169,7 +171,7 @@ elif estado.fase == "moviendo":
             if jugada not in tablero.legal_moves:  # corona siempre a dama
                 jugada = chess.Move(desde, hasta, promotion=chess.QUEEN)
             if jugada in tablero.legal_moves:
-                resolver(tablero.san(jugada), fila)
+                resolver(jugada, fila)
             else:
                 estado.origen = desde if desde in movibles else None
             st.rerun()
@@ -178,15 +180,27 @@ elif estado.fase == "moviendo":
         elegida = st.selectbox("Tu jugada", training.legal_sans(fila.fen_before),
                                key=f"sel{estado.pos}", label_visibility="collapsed")
         if st.button("Confirmar", type="primary", width="stretch"):
-            resolver(elegida, fila)
+            resolver(tablero.parse_san(elegida), fila)
             st.rerun()
 
 # --- fase 3: resultado ---
 else:
     veredicto = estado.veredicto
     mejor = tablero.parse_san(fila.best_san)
-    mostrar_tablero(tablero, orientacion,
-                    flecha=[chess.svg.Arrow(mejor.from_square, mejor.to_square, color="#15781B")])
+
+    # Se muestra la posicion YA con la jugada hecha: si no, uno nunca ve moverse
+    # la pieza que acaba de tocar.
+    despues = tablero.copy()
+    flechas = []
+    color_jugada = {"acierto": "#15781B", "impreciso": "#e8a33d", "repetido": "#cf222e"}
+    if estado.get("jugada_hecha"):
+        hecha = chess.Move.from_uci(estado.jugada_hecha)
+        despues.push(hecha)
+        flechas.append(chess.svg.Arrow(hecha.from_square, hecha.to_square,
+                                       color=color_jugada[veredicto.status]))
+    if veredicto.status != "acierto":
+        flechas.append(chess.svg.Arrow(mejor.from_square, mejor.to_square, color="#15781B"))
+    mostrar_tablero(despues, orientacion, flecha=flechas)
     {"acierto": st.success, "impreciso": st.warning, "repetido": st.error}[veredicto.status](
         f"{veredicto.icon} {veredicto.message}"
     )
