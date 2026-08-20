@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<style>
+  html, body { margin: 0; padding: 0; background: transparent; overflow: hidden; }
+  #envoltorio {
+    position: relative;
+    margin: 0 auto;
+    touch-action: none;          /* evita que el navegador robe el gesto */
+    -webkit-tap-highlight-color: transparent;
+    user-select: none;
+  }
+  #tablero svg { display: block; width: 100%; height: auto; }
+  #rejilla { position: absolute; inset: 0; display: grid;
+             grid-template-columns: repeat(8, 1fr); grid-template-rows: repeat(8, 1fr); }
+  .casilla { cursor: pointer; }
+  .casilla.origen { box-shadow: inset 0 0 0 4px rgba(21, 120, 27, .85); }
+  .casilla.destino::after {
+    content: ""; position: absolute; inset: 0; margin: auto;
+    width: 30%; height: 30%; border-radius: 50%;
+    background: rgba(21, 120, 27, .45);
+  }
+  .casilla { position: relative; }
+</style>
+</head>
+<body>
+<div id="envoltorio">
+  <div id="tablero"></div>
+  <div id="rejilla"></div>
+</div>
+
+<script>
+const COLUMNAS = "abcdefgh";
+let orientacion = "white";
+let seleccion = null;
+let destinos = [];
+let contador = 0;
+
+function aStreamlit(mensaje) {
+  window.parent.postMessage(Object.assign({ isStreamlitMessage: true }, mensaje), "*");
+}
+
+function fijarAltura() {
+  aStreamlit({ type: "streamlit:setFrameHeight", height: document.body.scrollHeight + 2 });
+}
+
+function enviar(desde, hasta) {
+  contador += 1;
+  aStreamlit({
+    type: "streamlit:setComponentValue",
+    value: { desde: desde, hasta: hasta, n: contador },
+    dataType: "json",
+  });
+}
+
+/** Nombre de la casilla segun la posicion en la rejilla y la orientacion. */
+function nombreCasilla(fila, columna) {
+  if (orientacion === "white") {
+    return COLUMNAS[columna] + (8 - fila);
+  }
+  return COLUMNAS[7 - columna] + (fila + 1);
+}
+
+function pintarAyudas() {
+  document.querySelectorAll(".casilla").forEach((celda) => {
+    celda.classList.toggle("origen", celda.dataset.casilla === seleccion);
+    celda.classList.toggle("destino", destinos.includes(celda.dataset.casilla));
+  });
+}
+
+function construirRejilla() {
+  const rejilla = document.getElementById("rejilla");
+  rejilla.innerHTML = "";
+  for (let fila = 0; fila < 8; fila += 1) {
+    for (let columna = 0; columna < 8; columna += 1) {
+      const celda = document.createElement("div");
+      celda.className = "casilla";
+      celda.dataset.casilla = nombreCasilla(fila, columna);
+      rejilla.appendChild(celda);
+    }
+  }
+  pintarAyudas();
+}
+
+/** Devuelve la casilla que esta bajo un punto de la pantalla. */
+function casillaEn(x, y) {
+  const elemento = document.elementFromPoint(x, y);
+  return elemento && elemento.dataset ? elemento.dataset.casilla : null;
+}
+
+let arrastreDesde = null;
+
+document.addEventListener("pointerdown", (evento) => {
+  const casilla = casillaEn(evento.clientX, evento.clientY);
+  if (!casilla) return;
+  arrastreDesde = casilla;
+  evento.preventDefault();
+});
+
+document.addEventListener("pointerup", (evento) => {
+  const casilla = casillaEn(evento.clientX, evento.clientY);
+  if (!arrastreDesde || !casilla) { arrastreDesde = null; return; }
+
+  if (casilla === arrastreDesde) {
+    // Un toque simple: si ya habia pieza elegida, esto es el destino.
+    if (seleccion && seleccion !== casilla) {
+      enviar(seleccion, casilla);
+    } else {
+      enviar(casilla, casilla);
+    }
+  } else {
+    enviar(arrastreDesde, casilla);   // arrastre de una casilla a otra
+  }
+  arrastreDesde = null;
+});
+
+window.addEventListener("message", (evento) => {
+  if (!evento.data || evento.data.type !== "streamlit:render") return;
+  const args = evento.data.args || {};
+  orientacion = args.orientacion || "white";
+  seleccion = args.seleccion || null;
+  destinos = args.destinos || [];
+
+  const envoltorio = document.getElementById("envoltorio");
+  envoltorio.style.maxWidth = (args.maximo || 400) + "px";
+
+  document.getElementById("tablero").innerHTML = args.svg || "";
+  construirRejilla();
+  fijarAltura();
+});
+
+aStreamlit({ type: "streamlit:componentReady", apiVersion: 1 });
+fijarAltura();
+</script>
+</body>
+</html>

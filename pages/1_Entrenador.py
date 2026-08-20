@@ -20,6 +20,7 @@ import streamlit as st  # noqa: E402
 
 from chesscoach import metrics, store, training, ui  # noqa: E402
 from chesscoach.config import load_config  # noqa: E402
+from chesscoach.tablero import tablero_tactil  # noqa: E402
 
 st.set_page_config(page_title="Entrenador — ChessCoach", page_icon="🎯", layout="centered")
 ui.compactar()
@@ -30,7 +31,6 @@ PREGUNTAS = (
     "¿Qué amenaza su **última jugada**?",
 )
 LADO = 380
-POR_FILA = 4  # botones por fila: entra comodo en un telefono
 
 
 @st.cache_data(ttl=300)
@@ -52,18 +52,6 @@ def mostrar_tablero(board: chess.Board, orientacion: chess.Color, resaltar=(), f
     ui.tablero(board, orientacion, resaltar=resaltar, flechas=flecha, maximo=LADO)
 
 
-def botonera(etiquetas: list[tuple[str, int]], prefijo: str) -> int | None:
-    """Dibuja botones en filas de POR_FILA y devuelve la casilla elegida."""
-    elegido = None
-    for inicio in range(0, len(etiquetas), POR_FILA):
-        grupo = etiquetas[inicio:inicio + POR_FILA]
-        columnas = st.columns(POR_FILA)
-        for columna, (texto, casilla) in zip(columnas, grupo, strict=False):
-            if columna.button(texto, key=f"{prefijo}{casilla}", width="stretch"):
-                elegido = casilla
-    return elegido
-
-
 config = load_config()
 espera = config.analysis.rushed_seconds
 posiciones = cargar_posiciones()
@@ -82,6 +70,7 @@ if "orden" not in estado:
     estado.pregunta = 0
     estado.inicio = time.time()
     estado.origen = None
+    estado.ultimo_gesto = None
     estado.stats = {"acierto": 0, "repetido": 0, "impreciso": 0}
 
 
@@ -91,6 +80,7 @@ def siguiente() -> None:
     estado.pregunta = 0
     estado.inicio = time.time()
     estado.origen = None
+    estado.ultimo_gesto = None
 
 
 def resolver(san: str, fila) -> None:
@@ -147,34 +137,48 @@ if estado.fase == "pensando":
             estado.fase = "moviendo"
             st.rerun()
 
-# --- fase 2: tocar la pieza y despues el destino ---
+# --- fase 2: tocar la pieza y despues el destino (o arrastrarla) ---
 elif estado.fase == "moviendo":
+    destinos = tuple(
+        m.to_square for m in tablero.legal_moves if m.from_square == estado.origen
+    ) if estado.origen is not None else ()
+
     if estado.origen is None:
-        mostrar_tablero(tablero, orientacion)
-        st.caption("Tocá la pieza que querés mover.")
-        origenes = sorted({m.from_square for m in tablero.legal_moves})
-        etiquetas = [
-            (f"{tablero.piece_at(c).unicode_symbol()} {chess.square_name(c)}", c)
-            for c in origenes
-        ]
-        if (elegido := botonera(etiquetas, "org")) is not None:
-            estado.origen = elegido
-            st.rerun()
+        st.caption("Tocá la pieza que querés mover, o arrastrala.")
     else:
-        destinos = sorted(m.to_square for m in tablero.legal_moves
-                          if m.from_square == estado.origen)
-        mostrar_tablero(tablero, orientacion, resaltar=destinos)
         pieza = tablero.piece_at(estado.origen).unicode_symbol()
         st.caption(f"{pieza} en {chess.square_name(estado.origen)} · tocá el destino.")
-        etiquetas = [(chess.square_name(c), c) for c in destinos]
-        if (destino := botonera(etiquetas, "dst")) is not None:
-            jugada = chess.Move(estado.origen, destino)
-            if jugada not in tablero.legal_moves:  # corona siempre a dama
-                jugada = chess.Move(estado.origen, destino, promotion=chess.QUEEN)
-            resolver(tablero.san(jugada), fila)
+
+    gesto = tablero_tactil(
+        tablero, orientacion,
+        seleccion=estado.origen, destinos=destinos,
+        maximo=LADO, key=f"tb{estado.pos}",
+    )
+
+    if gesto and gesto.get("n") != estado.get("ultimo_gesto"):
+        estado.ultimo_gesto = gesto["n"]
+        desde = chess.parse_square(gesto["desde"])
+        hasta = chess.parse_square(gesto["hasta"])
+        movibles = {m.from_square for m in tablero.legal_moves}
+
+        if desde == hasta:
+            estado.origen = desde if desde in movibles else None
             st.rerun()
-        if st.button("↩ Elegir otra pieza", width="stretch"):
-            estado.origen = None
+        else:
+            jugada = chess.Move(desde, hasta)
+            if jugada not in tablero.legal_moves:  # corona siempre a dama
+                jugada = chess.Move(desde, hasta, promotion=chess.QUEEN)
+            if jugada in tablero.legal_moves:
+                resolver(tablero.san(jugada), fila)
+            else:
+                estado.origen = desde if desde in movibles else None
+            st.rerun()
+
+    with st.expander("Elegir de una lista"):
+        elegida = st.selectbox("Tu jugada", training.legal_sans(fila.fen_before),
+                               key=f"sel{estado.pos}", label_visibility="collapsed")
+        if st.button("Confirmar", type="primary", width="stretch"):
+            resolver(elegida, fila)
             st.rerun()
 
 # --- fase 3: resultado ---
