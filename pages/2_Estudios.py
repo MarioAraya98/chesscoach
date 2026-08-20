@@ -1,4 +1,4 @@
-"""Visor de estudios: partidas anotadas con dos columnas de comentario."""
+"""Visor de estudios optimizado para el telefono: tablero y comentario a la vez."""
 
 from __future__ import annotations
 
@@ -12,32 +12,39 @@ import chess  # noqa: E402
 import chess.svg  # noqa: E402
 import streamlit as st  # noqa: E402
 
-from chesscoach import studies  # noqa: E402
+from chesscoach import studies, ui  # noqa: E402
 
-st.set_page_config(page_title="Estudios — ChessCoach", page_icon="📖", layout="wide")
-
-st.title("📖 Estudios")
+st.set_page_config(page_title="Estudios — ChessCoach", page_icon="📖", layout="centered")
+ui.compactar()
 
 libros = studies.load_studies()
 if not libros:
     st.warning(
         "No hay estudios todavía.\n\n"
         "Importá uno público de Lichess:\n"
-        "```\npython -m chesscoach.cli study https://lichess.org/study/XXXXXXXX\n```\n"
-        "o dejá cualquier `.pgn` anotado en la carpeta `studies/`."
+        "```\npython -m chesscoach.cli study https://lichess.org/study/XXXXXXXX\n```"
     )
     st.stop()
 
-seleccion = st.columns(2)
-libro = seleccion[0].selectbox("Libro", list(libros))
-capitulos = libros[libro]
-titulos = [capitulo.title for capitulo in capitulos]
-titulo = seleccion[1].selectbox("Capítulo", titulos)
+estado = st.session_state
+libro = estado.get("libro") or next(iter(libros))
+capitulos = libros.get(libro, next(iter(libros.values())))
+titulos = [c.title for c in capitulos]
+titulo = estado.get("titulo") if estado.get("titulo") in titulos else titulos[0]
 capitulo = capitulos[titulos.index(titulo)]
 
-# Botones y deslizador comparten la clave `paso`: si cada uno llevara su propio
-# estado, el deslizador pisaria el valor de los botones en cada rerun.
-estado = st.session_state
+# El selector va plegado: en el telefono cada linea cuenta.
+with st.expander(f"📖 {titulo}", expanded=False):
+    nuevo_libro = st.selectbox("Libro", list(libros), index=list(libros).index(libro))
+    nuevos = libros[nuevo_libro]
+    nuevos_titulos = [c.title for c in nuevos]
+    indice = nuevos_titulos.index(titulo) if titulo in nuevos_titulos else 0
+    nuevo_titulo = st.selectbox("Capítulo", nuevos_titulos, index=indice)
+    if (nuevo_libro, nuevo_titulo) != (libro, titulo):
+        estado.libro, estado.titulo = nuevo_libro, nuevo_titulo
+        estado.paso = 0
+        st.rerun()
+
 if estado.get("capitulo_actual") != (libro, titulo):
     estado.capitulo_actual = (libro, titulo)
     estado.paso = 0
@@ -46,58 +53,50 @@ total = len(capitulo.steps) - 1
 estado.paso = min(estado.get("paso", 0), total)
 paso = capitulo.steps[estado.paso]
 
-tablero, comentarios = st.columns([1, 1], gap="large")
+flecha = ()
+if paso.uci:
+    movimiento = chess.Move.from_uci(paso.uci)
+    flecha = [chess.svg.Arrow(movimiento.from_square, movimiento.to_square, color="#15781B")]
 
-with tablero:
-    board = chess.Board(paso.fen)
-    ultima = chess.Move.from_uci(paso.uci) if paso.uci else None
-    svg = chess.svg.board(board, lastmove=ultima, size=390, coordinates=True)
-    st.markdown(f'<div style="display:flex;justify-content:center">{svg}</div>',
-                unsafe_allow_html=True)
+ui.tablero(chess.Board(paso.fen), chess.WHITE, flechas=flecha, maximo=300)
 
-    botones = st.columns(4)
-    if botones[0].button("⏮ Inicio", width="stretch"):
-        estado.paso = 0
-        st.rerun()
-    if botones[1].button("◀ Atrás", width="stretch"):
-        estado.paso = max(0, estado.paso - 1)
-        st.rerun()
-    if botones[2].button("Siguiente ▶", type="primary", width="stretch"):
-        estado.paso = min(total, estado.paso + 1)
-        st.rerun()
-    if botones[3].button("Final ⏭", width="stretch"):
-        estado.paso = total
-        st.rerun()
+# --- navegacion compacta, en una sola fila ---
+botones = st.columns([1, 1, 1, 1])
+if botones[0].button("⏮", width="stretch"):
+    estado.paso = 0
+    st.rerun()
+if botones[1].button("◀", width="stretch"):
+    estado.paso = max(0, estado.paso - 1)
+    st.rerun()
+if botones[2].button("▶", type="primary", width="stretch"):
+    estado.paso = min(total, estado.paso + 1)
+    st.rerun()
+if botones[3].button("⏭", width="stretch"):
+    estado.paso = total
+    st.rerun()
 
-    st.caption(f"Jugada {estado.paso} de {total}")
-    if total:
-        st.slider("Ir a la jugada", 0, total, key="paso")
+encabezado = f"{paso.label} {paso.san}" if paso.san else "Introducción"
+st.markdown(
+    f"<div style='display:flex;justify-content:space-between;font-size:.9rem;"
+    f"opacity:.75;margin:.1rem 0'><b>{encabezado}</b>"
+    f"<span>{estado.paso}/{total}</span></div>",
+    unsafe_allow_html=True,
+)
 
-with comentarios:
-    if paso.san:
-        st.markdown(f"## {paso.label} {paso.san}")
-    else:
-        st.markdown("## Introducción")
+if paso.coach:
+    st.info(paso.coach)
+elif not paso.author:
+    st.caption("Sin comentario en esta jugada.")
 
-    st.markdown("#### 🎓 Entrenador")
-    if paso.coach:
-        st.info(paso.coach)
-    else:
-        st.caption("Sin comentario del entrenador en esta jugada.")
-
-    st.markdown(f"#### 📗 {capitulo.author_label}")
-    if paso.author:
+if paso.author:
+    with st.expander(f"📗 {capitulo.author_label}", expanded=not paso.coach):
         st.success(paso.author)
-    else:
-        st.caption(
-            "Vacío. Acá van las notas del autor del estudio, o las tuyas: agregá "
-            "`[[NOTAS]] tu texto` en el comentario del PGN."
-        )
 
-with st.expander("Ver todas las jugadas"):
-    linea = " ".join(
-        f"**{s.label} {s.san}**" if index == estado.paso else f"{s.label} {s.san}"
-        for index, s in enumerate(capitulo.steps)
-        if s.san
+with st.expander("Todas las jugadas"):
+    st.markdown(
+        " ".join(
+            f"**{s.label} {s.san}**" if i == estado.paso else f"{s.label} {s.san}"
+            for i, s in enumerate(capitulo.steps)
+            if s.san
+        )
     )
-    st.markdown(linea)

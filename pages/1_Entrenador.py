@@ -18,17 +18,18 @@ import chess  # noqa: E402
 import chess.svg  # noqa: E402
 import streamlit as st  # noqa: E402
 
-from chesscoach import metrics, store, training  # noqa: E402
+from chesscoach import metrics, store, training, ui  # noqa: E402
 from chesscoach.config import load_config  # noqa: E402
 
 st.set_page_config(page_title="Entrenador — ChessCoach", page_icon="🎯", layout="centered")
+ui.compactar()
 
 PREGUNTAS = (
     "¿Qué **jaques** tiene el rival?",
     "¿Qué **capturas** tiene el rival?",
     "¿Qué amenaza su **última jugada**?",
 )
-LADO = 340
+LADO = 300
 POR_FILA = 4  # botones por fila: entra comodo en un telefono
 
 
@@ -48,13 +49,7 @@ def jugada_del_rival(game_id: str, fen: str) -> str | None:
 
 
 def mostrar_tablero(board: chess.Board, orientacion: chess.Color, resaltar=(), flecha=()) -> None:
-    svg = chess.svg.board(
-        board, orientation=orientacion, size=LADO, coordinates=True,
-        squares=chess.SquareSet(resaltar) if resaltar else None,
-        arrows=flecha,
-    )
-    st.markdown(f"<div style='display:flex;justify-content:center'>{svg}</div>",
-                unsafe_allow_html=True)
+    ui.tablero(board, orientacion, resaltar=resaltar, flechas=flecha, maximo=LADO)
 
 
 def botonera(etiquetas: list[tuple[str, int]], prefijo: str) -> int | None:
